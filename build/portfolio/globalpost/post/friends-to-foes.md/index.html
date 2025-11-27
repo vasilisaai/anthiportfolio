@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">KENYA</div>
+
+  <h1 class="post-title"> Friends to Foes</h1>
+
+  <div class="date-tag">Oct. 10, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>Kenyan lawmakers overwhelmingly voted to impeach Vice President Rigathi
+ Gachagua this week over allegations of corruption, heightening political
+ tensions with the Kenyan president, William Ruto, the BBC
+ <a href="https://post.spmailtechnol.com/f/a/yqjnwXwMotDoLrIFCXLEjQ~~/AASU4wA~/RgRo6ihVP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsveWN4Nm5jM2w4di8_bGhfYWlkPTExNDUwJmxoX2NpZD0ybGlmY3FvejVyVwNzcGNCCmcFVqMHZ2_TL1pSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>Gachagua has been accused of acquiring properties worth \$40 million
+ through corrupt means. The wealthy businessman has denied the charges
+ and has said that most of the houses and land in question belonged to
+ his late brother's estate.</p>
+<p>The deputy is also under fire for allegedly supporting anti-government
+ protests and practicing ethnically divisive politics,
+ <a href="https://post.spmailtechnol.com/f/a/q7m_DXPIDhJOQ3MldZLEGQ~~/AASU4wA~/RgRo6ihVP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsveDQ3Yjh5cWtoMy8_bGhfYWlkPTExNDUwJmxoX2NpZD0ybGlmY3FvejVyVwNzcGNCCmcFVqMHZ2_TL1pSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to Deutsche Welle.</p>
+<p>Gachagua, as Ruto's running mate in the 2022 election, helped him secure
+ a large block of votes from central Kenya. At the time, Gachagua also
+ battled corruption allegations.</p>
+<p>Local media also reported a growing political rift between Ruto and
+ Gachagua in recent months.</p>
+<p>Political alliances shifted after Ruto dismissed most of his cabinet,
+ replacing them with members of the main opposition party following
+ violent mass protests against unpopular tax increases this summer.</p>
+<p>Last month, police summoned a number of lawmakers allied with the vice
+ president to answer charges involving their alleged funding of the
+ protests in June.</p>
+<p>Gachagua is the first Kenyan deputy to be impeached by the lower house
+ of the legislature. The upper chamber will now decide on his
+ impeachment,
+ <a href="https://post.spmailtechnol.com/f/a/1PVAqV4DOjXel2rmBVGYMA~~/AASU4wA~/RgRo6ihVP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvbWUyc3pwd3A0OS8_bGhfYWlkPTExNDUwJmxoX2NpZD0ybGlmY3FvejVyVwNzcGNCCmcFVqMHZ2_TL1pSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">wrote</a>
+ Reuters.</p>
+<p>Meanwhile, the vice president plans to challenge the impeachment in
+ court,
+ <a href="https://post.spmailtechnol.com/f/a/6Z4sVxuv0r7ehGnSHjxncw~~/AASU4wA~/RgRo6ihVP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvdm8za2wzZG9vYi8_bGhfYWlkPTExNDUwJmxoX2NpZD0ybGlmY3FvejVyVwNzcGNCCmcFVqMHZ2_TL1pSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to the Associated Press. He has also warned that his removal from office
+ would ignite discontent among his supporters and among his tribe, the
+ largest in the country.</p>
+<p>President Ruto has yet to comment publicly on the matter.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

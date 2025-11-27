@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">SWITZERLAND</div>
+
+  <h1 class="post-title"> ​​Clocking Out</h1>
+
+  <div class="date-tag">Oct. 18, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>A court in Switzerland ruled that a dial manufacturer in the famed Swiss
+ watchmaking industry was justified in requiring workers to punch out for
+ bathroom breaks, pitting the rich Alpine country's labor standards
+ against its reputation for "running like clockwork,"
+ <a href="https://post.spmailtechnol.com/f/a/HGS-f0rwT-R0ki3-yrqhEQ~~/AASU4wA~/RgRo9LRVP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvNmM4YTl3OTI4OC8_bGhfYWlkPTExNDUwJmxoX2NpZD1hOW95Zmw5b3A0VwNzcGNCCmcOVi8SZ83tGdxSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">wrote</a>
+ to the Associated Press.</p>
+<p>An investigative report by the Swiss news outlet RTS this month reported
+ that a regional court in Neuchâtel in western Switzerland found that
+ watch company Jean Singer &amp; Cie SA had not violated any rights by making
+ their employees clock out to use the toilet.</p>
+<p>The requirement became apparent to labor inspectors during an on-site
+ visit to the company during the Covid-19 pandemic in 2021. The
+ inspectors ordered the company to end the practice, alleging that Singer
+ violated a federal labor law that protects workers' personal needs.</p>
+<p>The labor inspectors claimed the policy could cause employees to "hold
+ it in or not hydrate, which could lead to serious physiological
+ disorders."</p>
+<p>The case was decided in June but made public last month. In the ruling,
+ Singer insisted that the employees had the freedom to choose what to do
+ on their breaks without having to notify their superiors and that the
+ lengths of the clock-outs were "left to the discretion of each
+ employee."</p>
+<p>The court ruled in favor of Singer, writing that "Swiss law does not
+ mention the right of employees to go to the toilet, even though this is
+ a basic physiological need."</p>
+<p>This "loophole" in Swiss labor law is not only being used by Singer but
+ by other companies in the watchmaking industry: Two companies in
+ Switzerland under the Swatch Group also required employees to clock out
+ for bathroom breaks.</p>
+<p>The parent firm said that it was unaware of this situation and ordered
+ its immediate end of the practice.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

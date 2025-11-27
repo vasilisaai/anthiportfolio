@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">INDONESIA</div>
+
+  <h1 class="post-title"> Yes, We Can</h1>
+
+  <div class="date-tag">Jan. 7, 2025</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>Indonesia's new government kicked off the first free meal program for
+ children and pregnant women Monday, hoping to fight malnutrition in the
+ county, with economists stressing fiscal concern for the
+ multi-billion-dollar project,
+ <a href="https://post.spmailtechnol.com/f/a/lMnb1yaQ1SIbx4r3kMMyuA~~/AASU4wA~/RgRpX4vkP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvYWJ1ZnBrcWJuOC8_bGhfYWlkPTExNDUwJmxoX2NpZD0zb2gwYml3bnBsVwNzcGNCCmd45QZ9ZwVQPyRSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to the Associated Press.</p>
+<p>The Free Nutritious Meal program was the election campaign centerpiece
+ promise of President Prabowo Subianto, who was elected last year. The
+ program is expected to feed nearly 90 million children and women,
+ costing around \$28 billion by the end of Subianto's term in 2029.</p>
+<p>The government and military, who will prepare and distribute the meals,
+ have been running pilot programs in the country.</p>
+<p>The first part of the scheme was rolled out this week on a small scale,
+ with just 90 kitchens involved in preparing the first meals in more than
+ 20 provinces, officials said,
+ <a href="https://post.spmailtechnol.com/f/a/6k7UAVU3mDTX7_4LkesY9g~~/AASU4wA~/RgRpX4vkP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZWNhNGNtajByeS8_bGhfYWlkPTExNDUwJmxoX2NpZD0zb2gwYml3bnBsVwNzcGNCCmd45QZ9ZwVQPyRSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to Al Jazeera. At an elementary school in West Jakarta, students were
+ given food trays of rice, fried chicken, fried tofu, beans, and an
+ orange in class on Monday morning.</p>
+<p>Indonesia is home to more than 282 million people and is Southeast
+ Asia's largest economy.</p>
+<p>Subianto said that the program aims to fight the stunting of growth that
+ afflicts 21.5 percent of Indonesian children younger than five and would
+ raise the income of farmers, reported the wire.</p>
+<p>But the policy has sparked concern among some economists who believe it
+ could dent Indonesia's hard-won reputation for fiscal prudence. Some
+ investors and analysts warned about the scale of its logistics, as well
+ as its burden on the economy and state finances.</p>
+<p>Nailul Huda, a researcher at the Center of Economic and Law Studies,
+ told the AP that the food program will lead to additional national debt
+ and that the nation's state finances are not strong enough to support
+ it.</p>
+<p>Prabowo has defended his plan, claiming that his team has made the
+ calculations and that "We are capable."</p>
+<p>In his inauguration speech in October, the president also noted that the
+ free meal program is part of a longer-term strategy to develop
+ Indonesia's human resources and achieve a "Golden Indonesia" by 2045.</p>
+<p>One in 12 children younger than five years old in the country suffers
+ from low weight while one in five is shorter than normal, according to
+ the United Nations Children's Fund.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

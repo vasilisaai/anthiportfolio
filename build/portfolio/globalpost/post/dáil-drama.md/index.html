@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">[IRELAND]</div>
+
+  <h1 class="post-title"> Dáil Drama</h1>
+
+  <div class="date-tag">Jan. 23, 2025</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p><a href="https://post.spmailtechnol.com/f/a/aL1Jhl8qTIY_7cnXjrMUeQ~~/AASU4wA~/RgRpdKPjP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZHo0bHJlNGZnYS8_bGhfYWlkPTExNDUwJmxoX2NpZD00M2hkZGRiaHpiVwNzcGNCCmeO4x6SZ_tkOTNSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">Michel Martin</a>
+ is set to become Ireland's prime minister for the second time after
+ lawmakers formally approve him as head of a coalition government on
+ Thursday, the BBC
+ <a href="https://post.spmailtechnol.com/f/a/rFgFuPTKcVxRzDiYfVYbxw~~/AASU4wA~/RgRpdKPjP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZmxyY2FmcGJvby8_bGhfYWlkPTExNDUwJmxoX2NpZD00M2hkZGRiaHpiVwNzcGNCCmeO4x6SZ_tkOTNSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>In a parliamentary election at the end of November, Martin's Fianna Fáil
+ party won the most seats, but not enough to govern alone,
+ <a href="https://post.spmailtechnol.com/f/a/vfmLurrfaqnKPIpCRAIT9g~~/AASU4wA~/RgRpdKPjP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvYzlkOHV5cjJrMC8_bGhfYWlkPTExNDUwJmxoX2NpZD00M2hkZGRiaHpiVwNzcGNCCmeO4x6SZ_tkOTNSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to ABC News. Afterward, the long-dominant center-right parties, Fianna
+ Fáil and Fine Gael, agreed to form a coalition following weeks of
+ talks.</p>
+<p>Martin, a veteran politician, is slated to become the taoiseach, or
+ prime minister, for three years, with outgoing taoiseach Simon Harris
+ from the Fine Gael party as his deputy. Afterward, the two politicians
+ will swap positions for the rest of the five-year term.</p>
+<p>Members of both political parties have ratified the agreement, and
+ Martin was set to be confirmed by members of Dáil, the parliament's
+ lower house, on Wednesday. President Michael D. Higgins was scheduled to
+ formally appoint him to the office, and Martin was set to appoint his
+ cabinet in the early evening.</p>
+<p>However, the Dáil was suspended until Thursday, after the usually
+ ceremonial appointment process was delayed by protests in the parliament
+ by opposition parties.</p>
+<p>Opposition parties Sinn Féin and Labour protested over attempts by
+ independent lawmakers, who are propping up the government, remaining on
+ opposition benches and eating up critical speaking time.</p>
+<p>Sinn Féin leader Mary Lou McDonald said the situation was "completely
+ unacceptable,"
+ <a href="https://post.spmailtechnol.com/f/a/memt9OR-mEQqFNOEcF7kFg~~/AASU4wA~/RgRpdKPjP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZjcwZGt3Y2dvdi8_bGhfYWlkPTExNDUwJmxoX2NpZD00M2hkZGRiaHpiVwNzcGNCCmeO4x6SZ_tkOTNSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to the Guardian. The Dáil speaker, Verona Murphy, was forced to suspend
+ proceedings twice, before adjourning the lower house until Thursday
+ morning.</p>
+<p>In the election on Nov. 29, Fianna Fáil won 48 of the 174 legislative
+ seats and Fine Gael won 38.</p>
+<p>While the two parties share similar center-right policies, they face a
+ rivalry dating back to Ireland's civil war in the 1920s where they were
+ on opposing sides. After the indecisive February election of 2020, Fine
+ Gael and Fianna Fáil entered into an unprecedented coalition government
+ and Martin became taoiseach for the first time.</p>
+<p>The forming of their new coalition shuts out the opposition center-left
+ party Sinn Féin, who won 39 seats, more than Fine Gael. The center-right
+ parties have refused to work with Sinn Féin because of their historic
+ ties with the Irish Republican Army during decades of violence in
+ Northern Ireland.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

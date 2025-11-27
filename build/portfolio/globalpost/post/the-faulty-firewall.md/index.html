@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">GERMANY</div>
+
+  <h1 class="post-title"> The Faulty &#39;Firewall&#39;</h1>
+
+  <div class="date-tag">Jan. 31, 2025</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>Germany's opposition conservatives won parliamentary approval on
+ Wednesday for a proposal to restrict migration, a vote that stirred
+ controversy because it breached a "firewall" by working with the
+ far-right Alternative for Germany (AfD) party, Reuters
+ <a href="https://post.spmailtechnol.com/f/a/MQ-yMviISBfxUgTF1Mv2vA~~/AASU4xA~/g8gO3naesIK3USCo_VozqISGZKRlHIarYlXHK2j-49dTxNdTyIAoxHYFKp0YrhnITKXwWsBob0hwquNGCbYUIK3NRhAU1WZmUroSGnVkqmbnbcEZB1yPV5KGYs2o-2yagxiH6P73Y38UhyLjVMkN0jHNCdbQLbf-8sMlOI8pvgw~">reported</a>.</p>
+<p>Fredrich Merz, the leader of the Christian Democratic Union (CDU),
+ proposed a motion in parliament calling for tougher border controls and
+ asylum rules, which passed with the support of the AfD, sparking anger
+ and recriminations among lawmakers across the political aisle.</p>
+<p>Chancellor Olaf Scholz of the center-left Social Democratic Party
+ reprimanded Merz for his actions, calling them an "unforgivable
+ mistake."</p>
+<p>"Since the founding of the Federal Republic of Germany over 75 years
+ ago, there has always been a clear consensus among all democrats in our
+ parliaments: We do not make common cause with the far right," he told
+ the legislature.</p>
+<p>His predecessor, Angela Merkel -- also of the CDU -- criticized Merz's
+ decision, saying he had said in November that no measures should be
+ passed with the AfD's support,
+ <a href="https://post.spmailtechnol.com/f/a/sTRbXKFmh6tNxJnBiRaJuw~~/AASU4xA~/g8gO3naesIK3USCo_VozqISGZKRlHIarYlXHK2j-49faRl-JobmHJxZVr-Q89IeadNkePf4pkuO_nRlFLLzDXztil9HSigQMbfX-euPIVulwRvFRnkRYdvSdeVuBTp4fl4hDdGiqkEheUz9pVIdlkfaJSxaJBB1L0ZhP6GawUes~">wrote</a>
+ Deutsche Welle.</p>
+<p>The importance of the firewall against the far right in the Western
+ European country's political culture is due to the legacy of the Nazi
+ party and its responsibility for the Holocaust.</p>
+<p>Many mainstream parties consider it taboo to work with them. Meanwhile,
+ the German security services are monitoring the AfD on suspicion of
+ being a right-wing extremist party.</p>
+<p>Even so, the CDU leader defended his actions as "necessary," and now
+ plans to propose actual legislation on Friday aimed at curbing
+ immigration numbers and family reunification rights, again with possible
+ backing from the AfD,
+ <a href="https://post.spmailtechnol.com/f/a/EVeb-b331M7gb2kiaDvlnw~~/AASU4xA~/g8gO3naesIK3USCo_VozqISGZKRlHIarYlXHK2j-49fNLnYBKfCKNC4xn2wjbilCy9FL5tC4Nkx2EZ4bPsG1VmpdNhZtw6Evv4agscoEdQmCIRUVHN0q_UDEf5_0RsFhD-ROmCBYjmV21V83BLFiO78-OWR_WNxvS_YzgUUw_I8~">according</a>
+ to the BBC.</p>
+<p>The recent controversy comes as Germany heads to parliamentary elections
+ on Feb. 23 following the collapse of Scholz's three-party coalition.</p>
+<p>Merz is the frontrunner for chancellor due to his party's leading
+ position in the polls. He has pushed for a stricter migration policy
+ following a series of deadly attacks in recent months by migrants.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

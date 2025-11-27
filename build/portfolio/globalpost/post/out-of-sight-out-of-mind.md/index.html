@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">ALBANIA</div>
+
+  <h1 class="post-title"> Out of Sight, Out of Mind</h1>
+
+  <div class="date-tag">Oct. 16, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>Italy sent its first boat transporting migrants to Albania on Monday,
+ part of the country's five-year agreement to process asylum seekers in
+ detention centers in the state that is outside the European Union, and
+ an agreement that has sparked outrage from human rights groups, France24
+ <a href="https://post.spmailtechnol.com/f/a/BU0y0GmHMJBM3r68ZPZS7A~~/AASU4wA~/RgRo8hFUP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvbDNoN21jZXA2bi8_bGhfYWlkPTExNDUwJmxoX2NpZD1seDBnZGkxdzE4VwNzcGNCCmcOVowPZ7-MPw1SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>Sixteen migrants from Egypt and Bangladesh had been rescued in
+ international waters by the Italian Coast Guard after departing Libya
+ for Italy,
+ <a href="https://post.spmailtechnol.com/f/a/la8Brm26_h4ylX1g5tdkPA~~/AASU4wA~/RgRo8hFUP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvNGdlOGU0eWQ1YS8_bGhfYWlkPTExNDUwJmxoX2NpZD1seDBnZGkxdzE4VwNzcGNCCmcOVowPZ7-MPw1SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>
+ ABC News.</p>
+<p>Instead of their asylum claims being processed in Italy, though, an
+ Italian ship named the Libra with the migrants on board left the Italian
+ island of Lampedusa in the Mediterranean and headed for the Albanian
+ port of Shengjin.</p>
+<p>Last November, Italian Premier Giorgia Meloni and Albanian Prime
+ Minister Edi Rama signed the deal which specified up to 3,000 migrants
+ picked up by the Italian Coast Guard would be sent to Albania each
+ month. The Libra was the first of these voyages.</p>
+<p>Rama said despite high demand from multiple countries in Europe, only
+ Italy is allowed to operate detention centers in Albania. An exception
+ was made for Italy due to the country's close ties with the country
+ across the Adriatic Sea, ABC News wrote.</p>
+<p>The migrants will be initially screened on board the Italian ships and
+ their cases will be more closely examined at the detention center in
+ Shengjin. Those migrants who are accepted will return to Italy. Those
+ rejected will be deported from Albania.</p>
+<p>Meanwhile, the Italian government has said that "vulnerable" migrants,
+ such as children, pregnant women, and the ill and the disabled, would be
+ processed in Italy. Only "non-vulnerable" men coming from "safe
+ countries" would be sent to the centers in Albania.</p>
+<p>European Commission President Ursula von der Leyen has endorsed the
+ agreement, citing it as an example of "out-of-box thinking,"
+ <a href="https://post.spmailtechnol.com/f/a/5HHnDwBfu2DzZNGG-O-XLg~~/AASU4wA~/RgRo8hFUP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvcTZzNnB4eWxjZS8_bGhfYWlkPTExNDUwJmxoX2NpZD1seDBnZGkxdzE4VwNzcGNCCmcOVowPZ7-MPw1SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to the New York Times.</p>
+<p>While being applauded by the Italian government and some European
+ leaders hoping to deter migration to the EU, the plan has also been
+ criticized by human rights groups who fear that such a plan puts
+ migrants at risk and exposes them to human rights violations.</p>
+<p>Susanna Zanfrini of the International Rescue Committee's office in Italy
+ criticized the detention centers for being "costly, cruel and
+ counterproductive," ABC reported.</p>
+<p>This is not the first time the EU has tried to "externalize" its
+ migration processing to non-EU states: It made a
+ <a href="https://post.spmailtechnol.com/f/a/4KcovipjMUC6qTdX1KaB9A~~/AASU4wA~/RgRo8hFUP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvbHZzazBqZm1qYi8_bGhfYWlkPTExNDUwJmxoX2NpZD1seDBnZGkxdzE4VwNzcGNCCmcOVowPZ7-MPw1SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">deal</a>
+ with Turkey in 2016 to slow migration into the bloc and accept deported
+ asylum seekers back into that country in exchange for about 9 billion
+ euros (\$10 billion).</p>
+<p>Meanwhile, the United Kingdom tried to implement a similar
+ <a href="https://post.spmailtechnol.com/f/a/1NGQdv5Ht2f8j4MGGNsQuQ~~/AASU4wA~/RgRo8hFUP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvc3F1bGZpajkwMC8_bGhfYWlkPTExNDUwJmxoX2NpZD1seDBnZGkxdzE4VwNzcGNCCmcOVowPZ7-MPw1SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">deal</a>
+ with Rwanda, but it was halted by British courts.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

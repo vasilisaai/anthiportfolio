@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">KENYA</div>
+
+  <h1 class="post-title"> The Right to Live</h1>
+
+  <div class="date-tag">Dec. 11, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>Police in Kenya scuffled with protesters in demonstrations across the
+ country against gender-based violence and femicide Tuesday, following
+ national outrage over a string of brutal killings of women in recent
+ months, the Associated Press
+ <a href="https://post.spmailtechnol.com/f/a/zv6QEhbgU2r8DruIt0jZjA~~/AASU4wA~/RgRpO_NkP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvcWl0bXI4YWxxaS8_bGhfYWlkPTExNDUwJmxoX2NpZD1hYmxpOG9oY255VwNzcGNCCmdVZW5ZZ28VZVpSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>In Nairobi, thousands of angry protestors chanting, "Stop femicide" and
+ "Women have rights, too," flooded the streets, demanding that the Kenyan
+ government take action to stop the killings as police threw tear gas
+ canisters at them and tried to disperse the protests.</p>
+<p>At least three activists, including the executive director of Amnesty
+ International in Kenya, were detained by police, while dozens reported
+ injuries.</p>
+<p>The protests are a result of outrage over a spate of killings of women,
+ with police reporting the murders of 97 women from August to October
+ this year, most of them by their male partners.</p>
+<p>Although gender-based violence has long been endemic in Kenya, this year
+ saw some high-profile killings and a spike in the number of women
+ murdered, causing nationwide anger and calls to action.</p>
+<p>In July, bags containing body parts of women believed to be murdered by
+ a serial killer were discovered in a dump in Nairobi. The rise in
+ killings in the country is linked to economic disparities and ingrained
+ patriarchal attitudes, researchers say.</p>
+<p>This problem is not unique to Kenya but reflects a wider problem across
+ the continent. A United Nations
+ <a href="https://post.spmailtechnol.com/f/a/IWyny3sBzzH36uWdF1CRiQ~~/AASU4wA~/RgRpO_NkP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvaHd2YzVhcGMzYy8_bGhfYWlkPTExNDUwJmxoX2NpZD1hYmxpOG9oY255VwNzcGNCCmdVZW5ZZ28VZVpSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">report</a>
+ published in November said Africa recorded the highest rate of
+ partner-related femicide in 2023, estimated to be more than 21,000
+ murders.</p>
+<p>After months of public criticism, Kenya's President William Ruto
+ acknowledged last month that femicide was "a pressing and deeply
+ troubling issue." After meeting with elected female leaders, he
+ committed about \$770,000 to a campaign to protect and support
+ victims.</p>
+<p>Activists and human rights groups have said that that figure is not
+ enough, calling on Ruto to declare femicide a national crisis and
+ allocate more funds. They have also called on parliament to enact a law
+ imposing harsher penalties on perpetrators of gender-motivated
+ killings.</p>
+<p>Meanwhile, protesters were outraged at the handling of demonstrations by
+ police.</p>
+<p>Activist Mwikali Mueni said that during the demonstration she suffered a
+ neck injury, inflicted by police officers. "It is very sad that I was
+ injured while championing for women not to be injured or killed," she
+ told the AP. "If the president is serious about ending femicide, let him
+ start by taking action on the officers who have brutalized us today."</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

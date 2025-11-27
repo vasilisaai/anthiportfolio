@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">HONG KONG</div>
+
+  <h1 class="post-title"> Liberty, Caged</h1>
+
+  <div class="date-tag">Nov. 21, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>China escalated its attempt to suppress political dissent in Hong Kong
+ this week, jailing dozens of pro-democracy activists for as long as a
+ decade, sparking outrage on the island and internationally, the Guardian
+ <a href="https://post.spmailtechnol.com/f/a/xnAqc11drwfDIJTRWB01bA~~/AASU4wA~/RgRpIZVjP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvcWY2N2FjaWJzMS8_bGhfYWlkPTExNDUwJmxoX2NpZD1uYTJxcTZ5eWIwVwNzcGNCCmc7ZBA_Z--EfpJSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>On Tuesday, a court sentenced 45 pro-democracy activists, which included
+ former legislators and academics, who were part of the group known as
+ Hong Kong 47, to jail terms ranging from two months to 10 years.</p>
+<p>The Hong Kong 47 had been arrested in 2021 for their participation in an
+ unofficial primary election that was held in July 2020, under the city's
+ national security law (NSL) that was imposed by Beijing in response to
+ pro-democracy protests the year before. More than 600,000 people voted
+ in the unofficial election.</p>
+<p>Joshua Wong, a student leader from the 2014 Umbrella movement who was
+ once the most recognizable face of the pro-democracy movement, was
+ sentenced to four years and eight months after pleading guilty. Benny
+ Tai, an academic, was sentenced to 10 years because of his role as
+ organizer of the primaries, the longest sentence given so for violating
+ the NSL.</p>
+<p>The trial was overseen by three government-picked judges and no jury due
+ to the provisions of the NSL, which critics have deemed punitive, noted
+ the Guardian.</p>
+<p>Simultaneously, Jimmy Lai, the media tycoon behind the tabloid "Apple
+ Daily," which is a regular target of China's ire, is also battling
+ charges of foreign collusion under the NSL and an additional charge of
+ sedition. He is facing life in prison,
+ <a href="https://post.spmailtechnol.com/f/a/mvz4e3xx0R0F8m-_FpNlhg~~/AASU4wA~/RgRpIZVjP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvdmp1bDI3MmFnYy8_bGhfYWlkPTExNDUwJmxoX2NpZD1uYTJxcTZ5eWIwVwNzcGNCCmc7ZBA_Z--EfpJSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to CNN.</p>
+<p>Lai,77, was arrested in 2020 and pleaded not guilty to the charges in
+ January. On Wednesday, taking a stand at his trial, Lai said he never
+ tried to influence foreign policy, never advocated for independence or
+ asked foreign officials to take concrete action on Hong Kong.</p>
+<p>Western countries and rights groups have demanded Lai's release from
+ solitary confinement, due to concerns for his health.</p>
+<p>For human rights groups and Western nations, these two cases under the
+ NSL highlight the steep decline in civil liberties such as freedom of
+ speech, assembly and political participation in Hong Kong over the past
+ five years.</p>
+<p>Officials in Hong Kong and Beijing have rejected the criticism, saying
+ that Lai is a "political tool of foreign forces trying to curb China
+ through Hong Kong" and that "no one should be allowed to use democracy
+ as a pretext to escape (the) law."</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

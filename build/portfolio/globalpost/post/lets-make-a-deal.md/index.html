@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">CHAGOS ISLANDS/MAURITIUS</div>
+
+  <h1 class="post-title"> Let&#39;s Make a Deal</h1>
+
+  <div class="date-tag">Dec. 20, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>A contentious deal for the United Kingdom to cede control of the Chagos
+ Islands to Mauritius is being challenged by the African island country's
+ new prime minister, who is now offering his own "counterproposals," Al
+ Jazeera
+ <a href="https://post.spmailtechnol.com/f/a/7k7l9KsH3extg0WhGy7w5g~~/AASU4wA~/RgRpR9DmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvbHcyMmM0YTd0Mi8_bGhfYWlkPTExNDUwJmxoX2NpZD1xaGJmZW1uZGlhVwNzcGNCCmdV50tlZ3EOeJ1SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>The British government has said it still plans to give control of the
+ chain of the contested Indian Ocean archipelago to Mauritius under the
+ condition that the largest of the islands, Diego Garcia, and its
+ strategic joint UK-US military base, remain under British rule for at
+ least 99 years.</p>
+<p>The initial agreement to transfer sovereignty of the chain of more than
+ 60 islands off the southern tip of India, just below the equator, was
+ announced in October,
+ <a href="https://post.spmailtechnol.com/f/a/vlZrcYXPNWGDHYOxldJj2Q~~/AASU4wA~/RgRpR9DmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvYXB2NTdsdXEybi8_bGhfYWlkPTExNDUwJmxoX2NpZD1xaGJmZW1uZGlhVwNzcGNCCmdV50tlZ3EOeJ1SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to the Associated Press.</p>
+<p>When the announcement was made, the UK's governing Labour Party said it
+ was finalizing the treaty's details with the Mauritian government. Since
+ then, the government in Mauritius was voted out by voters, and replaced
+ by one led by Prime Minister Navin Ramgoolam who took office last
+ month.</p>
+<p>On Tuesday, Ramgoolam said he was reopening negotiations because the
+ current deal "would not produce the benefits that the nation could
+ expect from such an agreement," wrote Al Jazeera.</p>
+<p>Ramgoolam added that his government "is still willing to come to an
+ agreement with the United Kingdom" and had submitted counterproposals.</p>
+<p>Stephen Doughty, the UK's minister for overseas territories told
+ lawmakers in the House of Commons on Wednesday that the deal would be
+ finalized as it was fair and in both countries' best interests.</p>
+<p>Doughty also said that the deal "protects the base at proportionate
+ cost. It has been supported across the national security architecture in
+ the United States and by India."</p>
+<p>The UK's Conservative Party has criticized Labour for surrendering
+ control of the territory that has been under their jurisdiction since
+ 1814 -- despite the negotiations over the Islands that led to this point
+ having been mostly conducted under the previous Conservative
+ government.</p>
+<p>In the 1960s and 1970s, the UK forcibly evicted nearly 2,000 local
+ residents to make way for the military base, which in the years since
+ has played a pivotal role in US military operations in Vietnam, Iran,
+ and Afghanistan, and was used for covert rendition flights of terror
+ suspects.</p>
+<p>The displaced people have fought in British courts for years for the
+ right to return to their homes. The new agreement would allow them and
+ their descendants to return to the islands, but not to Diego Garcia.</p>
+<p>US President Joe Biden has praised the agreement as "historic,"
+ emphasizing the importance of the US Navy base. The base on Diego Garcia
+ is currently home to around 2,500 American military personnel and has
+ continued to be a strategic point for security operations in the Middle
+ East, South Asia, and East Africa.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

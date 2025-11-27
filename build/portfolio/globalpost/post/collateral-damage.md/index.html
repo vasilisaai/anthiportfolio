@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anthiportfolio/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">LEBANON</div>
+
+  <h1 class="post-title"> Collateral Damage</h1>
+
+  <div class="date-tag">Nov. 22, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>The United Nations Educational, Scientific and Cultural Organization
+ (UNESCO) held an "extraordinary session" in Paris this week focusing on
+ protecting world heritage sites in Lebanon following growing concern
+ from prominent archeologists, academics, and Lebanese officials about
+ their destruction from intensifying Israeli strikes, Art Forum
+ <a href="https://post.spmailtechnol.com/f/a/dbXRgQ6fmTuq5jSBSUxsAQ~~/AASU4wA~/RgRpIubmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvNDZ3ZnZycGRydC8_bGhfYWlkPTExNDUwJmxoX2NpZD01OHZicWhpczJ0VwNzcGNCCmc_5mFAZ5E6AG9SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>During the meetings, UNESCO officials said they will add 34 Lebanese
+ cultural properties to the International List of Cultural Property under
+ Enhanced Protection and provide funding and technical assistance to
+ ensure the security of the sites, which have "outstanding value to
+ humanity,"
+ <a href="https://post.spmailtechnol.com/f/a/7Ee3WFtK_1f6HjGZZJMuKQ~~/AASU4wA~/RgRpIubmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvN3o2NDJ6Zm5qbS8_bGhfYWlkPTExNDUwJmxoX2NpZD01OHZicWhpczJ0VwNzcGNCCmc_5mFAZ5E6AG9SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to UNESCO.</p>
+<p>As a result, these sites will receive "immunity against attack and use
+ for military purposes," according to UNESCO. Non-compliance would
+ constitute "serious violations" of the 1954 Hague Convention on cultural
+ heritage in conflict and could lead to prosecution.</p>
+<p>For more than two millennia, the Roman temples and other structures at
+ Baalbek in eastern Lebanon have stood as some of the finest examples of
+ Roman architecture anywhere in the world, the BBC
+ <a href="https://post.spmailtechnol.com/f/a/T02XtXMj4zPAeeP3yHb4nQ~~/AASU4wA~/RgRpIubmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvNGdxbGR3ajYzbS8_bGhfYWlkPTExNDUwJmxoX2NpZD01OHZicWhpczJ0VwNzcGNCCmc_5mFAZ5E6AG9SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">wrote</a>.</p>
+<p>But earlier this month, a car park just a few feet away from the UNESCO
+ World Heritage site was hit by an Israeli air strike.</p>
+<p>The strike, which left the Roman temples and other structures untouched
+ but destroyed a centuries-old Ottoman building, highlighted what
+ archaeologists say is the risk of irreparable damage to historical sites
+ across Lebanon. That's because the war between Israel and Hezbollah,
+ which intensified starting in September, has moved beyond the targeting
+ of southern Lebanon, Beirut and the eastern Bekaa Valley, traditionally
+ Hezbollah strongholds, to threaten Baalbek and other areas.</p>
+<p>That has set off panic among archeologists.</p>
+<p>"Baalbek is the major Roman site in Lebanon -- you couldn't replace it
+ if someone bombed it," Graham Philip, an archaeology professor at Durham
+ University in the UK, told the BBC. "It would be a huge loss. It would
+ be a crime."</p>
+<p>Another site at risk is Tyre, a major port of the Phoenician Empire
+ around 2,500 years ago, which also hosts Roman ruins. It has been a
+ <a href="https://post.spmailtechnol.com/f/a/4TizYBSjhpAPRYuNM2WIJQ~~/AASU4wA~/RgRpIubmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZ3E1ZGV2aWRpcS8_bGhfYWlkPTExNDUwJmxoX2NpZD01OHZicWhpczJ0VwNzcGNCCmc_5mFAZ5E6AG9SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">target</a>
+ of airstrikes repeatedly in the past few weeks.</p>
+<p>UNESCO hopes that this move not only enshrines the protection of the
+ sites but also "helps send a signal to the entire international
+ community of the urgent need to protect these sites,"
+ <a href="https://post.spmailtechnol.com/f/a/LObX9g9kTazBF-PrbNvmkg~~/AASU4wA~/RgRpIubmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvcjJrb210ams0eS8_bGhfYWlkPTExNDUwJmxoX2NpZD01OHZicWhpczJ0VwNzcGNCCmc_5mFAZ5E6AG9SGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>
+ Radio France Internationale.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     
