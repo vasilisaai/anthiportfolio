@@ -1,19 +1,7 @@
-{% extends "index.html" %}
+{% extends "no-logo-nav.html" %}
 
-{% block content %}
+{% block here %}
 <style>
-
-  .name-text {
-    font-size: 140px;   /* desktop */
-    line-height: 0.8;
-  }
-
-  /* iPhone / small phone screens */
-  @media (max-width: 576px) {
-    .name-text {
-      font-size: 100px;   /* choose any size */
-    }
-  }
 
 a {
   color: black;
@@ -54,37 +42,6 @@ a:hover {
       </div>
       
 
-    <div class="col sm-1">
-      <div id="caption" class="caption"
-           style="font-family:'Times New Roman', Times, serif; font-size:0px;">
-      </div>
-    </div>
-  </div>
-
-  <div class="row" style="flex: 0 1 auto; margin-top: auto; min-height: 0;">
-    <div class="col name-text"
-         style="
-           padding:0;
-           padding-left: 40px;
-           display:flex;
-           flex-shrink:1;
-           max-height: 25vh;
-           align-items:flex-end;
-         ">
-      <div style="
-            font-family:'Times New Roman', Times, serif;
-
-            color:black;
-            white-space:normal;     /* ← allows wrapping instead of overflow */
-            overflow-wrap:break-word;
-          ">
-        <a href="/#">Anthi Likitsakos</a>
-      </div>
-    </div>
-  </div>
-  
-</div>
-</div>
 
   
 {% endblock %}

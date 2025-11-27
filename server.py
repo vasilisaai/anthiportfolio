@@ -19,13 +19,29 @@ freezer = Freezer(app)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 
-@freezer.register_generator
-def all_urls():
-    for page in flatpages:
-        yield 'post', {'slug': page.path}
+GLOBAL_POST_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'portfolio/global_post')
+
+app.config.from_object(__name__)
 
 GLOBAL_POST_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'portfolio/global_post')
 
+def get_all_posts_from_directory(directory):
+    posts = []
+    for filename in os.listdir(directory):
+        if filename.endswith('.md'):
+            posts.append({
+                'filename': filename,
+            })
+    return posts
+
+@freezer.register_generator
+def globalpostpost():
+    """Generate URLs for all Global Post article pages."""
+    posts = get_all_posts_from_directory(GLOBAL_POST_DIR)
+    for post in posts:
+        # globalpostpost(post_filename=...)
+        yield {'post_filename': post['filename']}
+        
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -98,39 +114,15 @@ def globalpostpost(post_filename):
     post = show_post(post_filename, GLOBAL_POST_DIR)
     return render_template('post.html', post_filename=post_filename, post=post, header_text="Art Listings")
 
-@app.route('/portfolio/journal')
-def journal():
-    return render_template('writing.html')
-
-@app.route('/projects')
-def projects():
-    return render_template('projects.html')
-
 @app.route('/resume/')
 def resume():
     return render_template('resume.html')
 
-@app.route('/photography')
-def photography():
-    def get_images(subfolder):
-        folder = os.path.join(app.static_folder, 'images', subfolder)
-        
-        return [f'images/{subfolder}/{file}' for file in os.listdir(folder) if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
 
-    carousel1_images = get_images('Athens')
-    carousel2_images = get_images('Colombia')
-    carousel3_images = get_images('Ischia')
-
-    return render_template(
-        'photography.html',
-        carousel1_images=carousel1_images,
-        carousel2_images=carousel2_images,
-        carousel3_images=carousel3_images
-    )
 @app.route('/contact/')
 def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
     freezer.freeze()
+    app.run(debug=True, port=5001)

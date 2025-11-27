@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+
+{% block content %}
+<style>
+
+  .name-text {
+    font-size: 100px;   /* desktop */
+    line-height: 0.8;
+  }
+
+  /* iPhone / small phone screens */
+  @media (max-width: 576px) {
+    .name-text {
+      font-size: 100px;   /* choose any size */
+    }
+  }
+
+</style>
+
+<div class="parent" 
+     style="height: 94vh; display: flex; flex-direction: column; overflow: hidden;">
+  
+     {% block here %}
+     {% endblock %}
+
+    <div class="col sm-1">
+      <div id="caption" class="caption"
+           style="font-family:'Times New Roman', Times, serif; font-size:0px;">
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="flex: 0 1 auto; margin-top: auto; min-height: 0;">
+    <div class="col name-text"
+         style="
+           padding:0;
+           padding-left: 40px;
+           display:flex;
+           flex-shrink:1;
+           max-height: 25vh;
+           align-items:flex-end;
+         ">
+      <div style="
+            font-family:'Times New Roman', Times, serif;
+
+            color:black;
+            white-space:normal;     /* ← allows wrapping instead of overflow */
+            overflow-wrap:break-word;
+          ">
+        Anthi Likitsakos
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
+  
+  
+{% endblock %}
