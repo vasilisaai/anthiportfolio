@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">AFGHANISTAN</div>
+
+  <h1 class="post-title"> Midwife Crisis</h1>
+
+  <div class="date-tag">Dec. 6, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>The Taliban in Afghanistan banned women from attending courses training
+ them to be midwives and nurses, blocking women's last route to higher
+ education and creating a dire health threat in the country, the BBC
+ <a href="https://post.spmailtechnol.com/f/a/TLTfOGjwrg1km5Ad_cZF1w~~/AASU4wA~/RgRpNVvmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZzNqMW4yODY5bi8_bGhfYWlkPTExNDUwJmxoX2NpZD1haWlpaWtrMWZmVwNzcGNCCmdG5tZSZxifYBdSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>This week, five private medical training institutions across Afghanistan
+ confirmed to the BBC that the Taliban had instructed them to close
+ indefinitely.</p>
+<p>Women also reported being ordered not to return to their classes the
+ following day. Videos circulated online of some students weeping at the
+ news, as well as others singing in defiance as they left the training
+ colleges. Women were recently banned from raising their voices.</p>
+<p>"They even told us not to stand in the courtyard because the Taliban
+ could arrive at any moment, and something might happen. Everyone was
+ terrified," one student told the BBC. "For many of us, attending classes
+ was a small glimmer of hope after long periods of unemployment,
+ depression, and isolation at home."</p>
+<p>Since the Taliban's takeover of the country in August 2021, females
+ cannot attend school after the sixth grade. The Taliban had promised to
+ readmit girls into school once issues with the system were resolved, for
+ example ensuring the curriculum was "Islamic," but to date they have not
+ kept this promise. As a result, 2.5 million females are missing from
+ schools and universities, the United Nations
+ <a href="https://post.spmailtechnol.com/f/a/qqEwaocXCLSiW-FMYm1Fvw~~/AASU4wA~/RgRpNVvmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvcTJpMGZpcnZhNi8_bGhfYWlkPTExNDUwJmxoX2NpZD1haWlpaWtrMWZmVwNzcGNCCmdG5tZSZxifYBdSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">said</a>.</p>
+<p>Training to be nurses or midwives in further education colleges was one
+ of the few avenues still open to women seeking higher education and a
+ career. Officials in the Ministry of Public Health successfully lobbied
+ Taliban officials in February of 2024 to allow women to obtain nursing
+ and midwife training,
+ <a href="https://post.spmailtechnol.com/f/a/88IUYlfeAuWo3u3EYy93tg~~/AASU4wA~/RgRpNVvmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvMXg1a244YXN3My8_bGhfYWlkPTExNDUwJmxoX2NpZD1haWlpaWtrMWZmVwNzcGNCCmdG5tZSZxifYBdSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">told</a>
+ NPR.</p>
+<p>One motivation for this exception to the banning of higher education for
+ women was that females are not allowed to receive medical treatment from
+ male medics without a male guardian present.</p>
+<p>Now, this new decree will have a dire impact on maternal health and
+ women's health in general, in a country with one of the worst maternal
+ mortality rates in the world, Human Rights Watch
+ <a href="https://post.spmailtechnol.com/f/a/1-t8SyIA8is0DC3ZJzLuKw~~/AASU4wA~/RgRpNVvmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsveWJ2ZWI5Mmp5by8_bGhfYWlkPTExNDUwJmxoX2NpZD1haWlpaWtrMWZmVwNzcGNCCmdG5tZSZxifYBdSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">wrote</a>.</p>
+<p>"This new decree ... will result in unnecessary pain, misery, sickness,
+ and death for the women forced to go without health care,"
+ <a href="https://post.spmailtechnol.com/f/a/pXi2Bo_TeBxjmH3WLf_9rw~~/AASU4wA~/RgRpNVvmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvMjdidGUzN3hody8_bGhfYWlkPTExNDUwJmxoX2NpZD1haWlpaWtrMWZmVwNzcGNCCmdG5tZSZxifYBdSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">said</a>
+ Human Rights Watch's Sahar Fetrat.</p>
+<p>About 17,000 women were enrolled in the courses. Meanwhile, a UN report
+ last year
+ <a href="https://post.spmailtechnol.com/f/a/USMiNP2grTbjMkR3OkMHgg~~/AASU4wA~/RgRpNVvmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZndiNWhkbGs3by8_bGhfYWlkPTExNDUwJmxoX2NpZD1haWlpaWtrMWZmVwNzcGNCCmdG5tZSZxifYBdSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">estimated</a>
+ that Afghanistan needed an additional 18,000 midwives to meet the
+ country's needs.</p>
+<p>"This is bad news for all Afghan people," one student, turned away from
+ her classes, told NPR. "Because men cannot become midwives in
+ Afghanistan."</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     
