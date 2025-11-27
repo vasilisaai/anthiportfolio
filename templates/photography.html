@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+
+{% block content %}
+<style>
+    .full-width-carousel-wrapper {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .carousel-text {
+        max-width: 900px;        /* or whatever width suits your design */
+        margin: 0 auto;          /* centers the container horizontally */
+        text-align: left;        /* keeps the text left-aligned inside */
+    }
+    .multi-carousel {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      
+    }
+    .multi-carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+    .carousel-image-container {
+      height: 400px; /* Or whatever width you want per image */
+    }
+    .carousel-image-container img {
+      width: auto;
+      height: 400px;
+      object-fit: contain;
+    }
+    .place-name {
+      font-size: large;
+      font-weight: bold;
+    }
+  </style>
+
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <p>I like to take photos....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum urna ut urna mattis sollicitudin. In hac habitasse platea dictumst. Pellentesque cursus, lacus sed feugiat rutrum, elit dui auctor risus, quis lobortis leo sem aliquam ligula. Sed a justo feugiat, euismod lectus aliquet, finibus sapien. Donec erat nisi, volutpat ac quam et, tincidunt volutpat dolor. Aliquam erat volutpat. Morbi sit amet molestie lorem, ac ornare lectus. Sed fermentum nunc pretium rhoncus blandit. Etiam eu massa sit amet lorem venenatis porttitor et at lectus. Etiam tellus dui, suscipit eu interdum id, viverra eu ex. Etiam non est sem.</p>
+  </div>
+
+<div class="container-fluid my-5">
+  {% for images, label in [(carousel1_images, 'Athens'), (carousel2_images, 'Ischia'), (carousel3_images, 'Colombia')] %}
+    <div class="carousel-text mb-4">
+        <div class="place-name">{{ label }}</div>
+        <p>TKTKTKTK</p>
+      </div>  
+      <div class="full-width-carousel-wrapper mb-5">
+        <div class="multi-carousel d-flex overflow-auto">
+          {% for image in images %}
+            <div class="carousel-image-container flex-shrink-0 px-3">
+              <img src="{{ url_for('static', filename=image) }}" class="img-fluid" alt="photo">
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+    
+  </div>
+
+{% endblock %}

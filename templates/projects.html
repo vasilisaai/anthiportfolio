@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+
+{% block content %}
+<style>
+  .navbar {
+        border-bottom: 1px solid black;
+  }
+  .post-feed {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .post {
+    font-size: small;
+    border-bottom: 1px solid #000000;
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+  }
+  .featured-img img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+  }
+  .title {
+    color: #000;
+    text-decoration: none;
+}
+  .title:hover {
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px; 
+    text-decoration-color: red;
+  }
+</style>
+
+
+  <!-- SECOND NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light border-top">
+    <div class="container justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item mx-5">
+          <a class="nav-link" href="/writing/fieldstudy">Field Study</a>
+        </li>
+        <li class="nav-item mx-5">
+          <a class="nav-link" href="/writing/other">Other</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="text-center mb-5">
+      <p>Field study, etc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum urna ut urna mattis sollicitudin. In hac habitasse platea dictumst. Pellentesque cursus, lacus sed feugiat rutrum, elit dui auctor risus, quis lobortis leo sem aliquam ligula. Sed a justo feugiat, euismod lectus aliquet, finibus sapien. Donec erat nisi, volutpat ac quam et, tincidunt volutpat dolor. Aliquam erat volutpat. Morbi sit amet molestie lorem, ac ornare lectus. Sed fermentum nunc pretium rhoncus blandit. Etiam eu massa sit amet lorem venenatis porttitor et at lectus. Etiam tellus dui, suscipit eu interdum id, viverra eu ex. Etiam non est sem.</p>
+    </div>
+    FIELD STUDY
+  <div class="post-feed container">
+      {% for post in posts %}
+          <div class="post row align-items-center">
+              <div class="col-6">
+                  <a class="title" href="https://vasilisaai.github.io/mynewportfolio{{ request.path }}post/{{ post.filename }}">{{ post.title | striptags }}</a>
+              </div>
+              <div class="col-3">
+                  <div class="publication" style="font-style: italic; margin: 8px;">
+                      <div>{% set raw_date = post.img[:-4] %}  {# removes ".jpg" #}
+                          {% set formatted_date = raw_date[:2] ~ '.' ~ raw_date[2:4] ~ '.' ~ raw_date[4:] %}
+                          <div>{{ formatted_date }}</div>
+                      </div>
+                      <div>{{ publication }}</div>
+                      <br>
+                  </div>
+              </div>
+              <div class="col-3">
+                  <div class="featured-img">
+                      <img src="{{ url_for('get_image', filename=post.img) }}" alt="Post Image">
+                  </div>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+
+  <!-- Add more content below as needed -->
+
+{% endblock %}
