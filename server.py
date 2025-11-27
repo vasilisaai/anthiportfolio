@@ -23,8 +23,6 @@ GLOBAL_POST_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'port
 
 app.config.from_object(__name__)
 
-GLOBAL_POST_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'portfolio/global_post')
-
 def get_all_posts_from_directory(directory):
     posts = []
     for filename in os.listdir(directory):
@@ -41,10 +39,6 @@ def globalpostpost():
     for post in posts:
         # globalpostpost(post_filename=...)
         yield {'post_filename': post['filename']}
-        
-@app.route('/')
-def home():
-    return render_template('home.html')
 
 def get_post(post_filename, DIR):
     post_path = os.path.join(DIR, post_filename)
@@ -87,11 +81,8 @@ def show_post(post_filename, directory):
 
     date, title, country, preview, preview_html = get_post(post_filename, directory)
 
-    # add image filename
-    img = post_filename.replace(".md", ".jpg")
-
     post = {
-        'img': img,
+        'filename': post_filename,
         'date': date,
         'title': title,
         'country': country,
@@ -122,6 +113,10 @@ def resume():
 @app.route('/contact/')
 def contact():
     return render_template('contact.html')
+
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     freezer.freeze()
