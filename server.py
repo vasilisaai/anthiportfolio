@@ -106,7 +106,7 @@ def journal():
 def projects():
     return render_template('projects.html')
 
-@app.route('/resume')
+@app.route('/resume/')
 def resume():
     return render_template('resume.html')
 
@@ -127,7 +127,7 @@ def photography():
         carousel2_images=carousel2_images,
         carousel3_images=carousel3_images
     )
-@app.route('/contact')
+@app.route('/contact/')
 def contact():
     return render_template('contact.html')
 
