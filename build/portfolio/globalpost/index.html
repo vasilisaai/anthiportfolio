@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+  padding: 10px 0;
+  align-items: flex-start;
+}
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+  font-size: 18px;
+}
+
+.post-title {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    position: relative;
+    top: 10px;   /* adjust 2–6px until it feels perfect */
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 2;
+    position: relative;
+    top: 10px;   /* adjust 2–6px until it feels perfect */
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="padding-left:0;height: 40px">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important;" href="/portfolio/globalpost">Global Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Journal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Offline</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <h1 style="font-size:80px; font-weight: bold; line-height:150px;">Global Post</h1>
+  <h1 style="font-style:italic; font-size:35px; line-height: 40px;">Concise reports on global news written for the Global Post, the largest daily newsletter devoted to world news..</h1>
+
+  <div class="container" style="text-align:left; padding:0;">
+    <div class="post-feed">
+      <br>
+
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">MEXICO</div>
+              <div class="date-tag">Oct. 1, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/navigating-a-shadow.md">
+                Navigating a Shadow
+                </a>    
+            </div>
+            <div class="post-preview">
+                Mexico will inaugurate its first female president Tuesday, marking a new chapter for the country but also the end of an era as populist leader Andrés Manuel López Obrador steps down, the Guardian r...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">HONG KONG</div>
+              <div class="date-tag">Nov. 21, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/liberty-caged.md">
+                Liberty, Caged
+                </a>    
+            </div>
+            <div class="post-preview">
+                China escalated its attempt to suppress political dissent in Hong Kong this week, jailing dozens of pro-democracy activists for as long as a decade, sparking outrage on the island and international...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">SOUTH AFRICA</div>
+              <div class="date-tag">Oct. 8, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-slaughterhouse.md">
+                The Slaughterhouse
+                </a>    
+            </div>
+            <div class="post-preview">
+                A case in South Africa, where two black women were murdered and fed to pigs on a white-owned farm, has sparked outrage and protests across the country, while also reigniting a debate over the issue...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">AFGHANISTAN</div>
+              <div class="date-tag">Jan. 22, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/two-for-one.md">
+                Two for One
+                </a>    
+            </div>
+            <div class="post-preview">
+                Two Americans held in Afghanistan were released on Tuesday in exchange for a Taliban member imprisoned for life in California on drug trafficking and terrorism charges, the Associated Press reporte...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ITALY</div>
+              <div class="date-tag">Sep. 26, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/desperate-measures.md">
+                Desperate Measures
+                </a>    
+            </div>
+            <div class="post-preview">
+                Italy moved to deploy its army to guard hospital staff in Calabria and elsewhere after escalating violence by patients and their family members across Italy has left dozens of doctors, nurses and o...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ALBANIA</div>
+              <div class="date-tag">Oct. 16, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/out-of-sight-out-of-mind.md">
+                Out of Sight, Out of Mind
+                </a>    
+            </div>
+            <div class="post-preview">
+                Italy sent its first boat transporting migrants to Albania on Monday, part of the country&#39;s five-year agreement to process asylum seekers in detention centers in the state that is outside the Europ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">MOZAMBIQUE</div>
+              <div class="date-tag">Oct. 11, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/singing-the-ballot-blues.md">
+                Singing the Ballot Blues
+                </a>    
+            </div>
+            <div class="post-preview">
+                More than 30 people have been killed in Mozambique in one week, raising the death toll to 110 in the government&#39;s bloody crackdown on protestors following a disputed election in October, the Associ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">TURKEY</div>
+              <div class="date-tag">Oct. 25, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/tit-for-tat.md">
+                Tit For Tat
+                </a>    
+            </div>
+            <div class="post-preview">
+                Turkey launched airstrikes on Syria and Iraq Thursday, targeting suspected Kurdish militants based there whom it blames for a deadly attack on the headquarters of its national aerospace company ear...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">BOLIVIA</div>
+              <div class="date-tag">Sep. 20, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/power-struggle.md">
+                Power Struggle
+                </a>    
+            </div>
+            <div class="post-preview">
+                Violence broke out in Bolivia during a march in support of popular former President Evo Morales after counter-protesters blocked the route, underscoring an escalating power struggle in the country,...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">LEBANON</div>
+              <div class="date-tag">Nov. 22, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/collateral-damage.md">
+                Collateral Damage
+                </a>    
+            </div>
+            <div class="post-preview">
+                The United Nations Educational, Scientific and Cultural Organization (UNESCO) held an &#34;extraordinary session&#34; in Paris this week focusing on protecting world heritage sites in Lebanon following gro...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">SWEDEN</div>
+              <div class="date-tag">Oct. 3, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/no-spare-change.md">
+                No Spare Change
+                </a>    
+            </div>
+            <div class="post-preview">
+                The Swedish government is facing a backlash after announcing plans this week to ban begging nationwide, with critics accusing it of trying to &#34;outlaw poverty&#34; and questioning the legality of such a...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">FRANCE</div>
+              <div class="date-tag">Nov. 19, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/sowing-rage.md">
+                Sowing Rage
+                </a>    
+            </div>
+            <div class="post-preview">
+                Angry farmers staged dozens of demonstrations across France Monday, protesting against a trade pact between the European Union and the Mercosur trade bloc of South American countries, which they sa...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">RUSSIA</div>
+              <div class="date-tag">Jan. 14, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/moscow-mates.md">
+                Moscow Mates
+                </a>    
+            </div>
+            <div class="post-preview">
+                Russian President Vladimir Putin and Iranian President Masoud Pezeshkian will sign a long-awaited strategic partnership pact following talks on Friday, in an effort to shore up resistance to the We...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">[IRELAND]</div>
+              <div class="date-tag">Jan. 23, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/dáil-drama.md">
+                Dáil Drama
+                </a>    
+            </div>
+            <div class="post-preview">
+                Michel Martin is set to become Ireland&#39;s prime minister for the second time after lawmakers formally approve him as head of a coalition government on Thursday, the BBC reported. In a parliamentary ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">MEXICO</div>
+              <div class="date-tag">Oct. 9, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/new-faces-new-targets.md">
+                New Faces, New Targets
+                </a>    
+            </div>
+            <div class="post-preview">
+                The mayor of the capital of Mexico&#39;s violence-plagued state of Guerrero was killed over the weekend less than a week after he took office, one of almost three dozen murders of politicians in the pa...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">CHINA</div>
+              <div class="date-tag">Jan. 8, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/quake-at-the-peak.md">
+                Quake at the Peak
+                </a>    
+            </div>
+            <div class="post-preview">
+                / TIBET More than 120 people were killed in a high-magnitude earthquake in the mountainous region of Tibet in western China on Tuesday, with tremors being felt across the Himalayas and rescue missi...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">RUSSIA</div>
+              <div class="date-tag">Sep. 26, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/legislating-values.md">
+                ​​Legislating Values
+                </a>    
+            </div>
+            <div class="post-preview">
+                Russia&#39;s lower house of parliament on Wednesday approved the first reading of a bill that would ban the adoption of Russian children by citizens from countries that allow gender transition, the lat...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">FRANCE</div>
+              <div class="date-tag">Sep. 13, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/lording-over-the-rings.md">
+                Lording Over the Rings
+                </a>    
+            </div>
+            <div class="post-preview">
+                Paris&#39; triumphant hosting of the Olympics this summer has turned into a political fight over the Games&#39; most well-known symbol, with the French capital&#39;s mayor determined to keep the rings on the c...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">CHAD</div>
+              <div class="date-tag">Jan. 10, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/drunken-siege.md">
+                Drunken Siege
+                </a>    
+            </div>
+            <div class="post-preview">
+                Eighteen assailants and one presidential guard died during an attack on the presidential complex of Chad amidst political turmoil in the central African nation, according to the Guardian. Officials...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">INDIA/PAKISTAN</div>
+              <div class="date-tag">Nov. 14, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-toxic-shroud.md">
+                The Toxic Shroud
+                </a>    
+            </div>
+            <div class="post-preview">
+                Cities in India and Pakistan saw unprecedented levels of thick, toxic smog this week, leading officials to close schools, keep workers home and request residents wear masks, CNN reported. The Air Q...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">SWITZERLAND</div>
+              <div class="date-tag">Oct. 18, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/clocking-out.md">
+                ​​Clocking Out
+                </a>    
+            </div>
+            <div class="post-preview">
+                A court in Switzerland ruled that a dial manufacturer in the famed Swiss watchmaking industry was justified in requiring workers to punch out for bathroom breaks, pitting the rich Alpine country&#39;s ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">GUATEMALA</div>
+              <div class="date-tag">Dec. 25, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/under-siege.md">
+                Under Siege
+                </a>    
+            </div>
+            <div class="post-preview">
+                Guatemalan authorities raided the compound of an ultra-orthodox Jewish sect on Friday, rescuing at least 40 women and 160 children following allegations of child abuse, including rape, reported ABC...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ZAMBIA</div>
+              <div class="date-tag">Oct. 23, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/tipping-the-scales.md">
+                Tipping the Scales
+                </a>    
+            </div>
+            <div class="post-preview">
+                Zambian President Hakainde Hichilema dismissed three of the country&#39;s top judges for alleged judicial misconduct, raising questions about judicial independence and political interference ahead of t...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">GEORGIA</div>
+              <div class="date-tag">Oct. 30, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/wanted-a-do-over.md">
+                Wanted: A Do-Over
+                </a>    
+            </div>
+            <div class="post-preview">
+                Georgia launched a partial vote recount Tuesday, just days after the country&#39;s president and the opposition called for mass protests and the annulment of the election after results showed the rulin...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">[CHINA]</div>
+              <div class="date-tag">Sep. 16, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/extra-shifts.md">
+                Extra Shifts
+                </a>    
+            </div>
+            <div class="post-preview">
+                China will raise the retirement age next year, a move aimed at addressing the demographic challenges in a country where the current age for workers to retire is one of the lowest in the world, the ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">INDONESIA</div>
+              <div class="date-tag">Jan. 7, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/yes-we-can.md">
+                Yes, We Can
+                </a>    
+            </div>
+            <div class="post-preview">
+                Indonesia&#39;s new government kicked off the first free meal program for children and pregnant women Monday, hoping to fight malnutrition in the county, with economists stressing fiscal concern for th...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">MOLDOVA</div>
+              <div class="date-tag">Oct. 22, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/sore-losers.md">
+                Sore Losers
+                </a>    
+            </div>
+            <div class="post-preview">
+                Moldova has narrowly voted to join the European Union in a referendum and an election marked by allegations of heavy-handed interference by Russia, even as the Kremlin complained Monday of election...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">[MARTINIQUE]</div>
+              <div class="date-tag">Sep. 24, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/defiance.md">
+                Defiance
+                </a>    
+            </div>
+            <div class="post-preview">
+                France deployed a long-banned anti-riot force to Martinique to help local authorities suppress protests over the skyrocketing price of food, with demonstrators accusing the central government of tr...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ROMANIA</div>
+              <div class="date-tag">Dec. 12, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/much-ado-about-everything.md">
+                Much Ado About Everything
+                </a>    
+            </div>
+            <div class="post-preview">
+                Romanian pro-European Union parties said they are coming together to head off any future bid from the far right, following the victory of the far-right candidate in a recent election that was inval...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">BANGLADESH</div>
+              <div class="date-tag">Oct. 2, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/pulling-on-the-threads.md">
+                Pulling on the Threads
+                </a>    
+            </div>
+            <div class="post-preview">
+                One person was shot dead and at least 20 others were injured in violent clashes between protesting garment workers and police in Bangladesh on Monday, rocking the country just a few months after it...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">MONTENEGRO</div>
+              <div class="date-tag">Jan. 3, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/new-year-old-story.md">
+                New Year, Old Story
+                </a>    
+            </div>
+            <div class="post-preview">
+                Montenegro is observing three days of national mourning after 12 people, including two children, were killed on New Year&#39;s Day in a rare mass shooting in the town of Cetinje, according to BBC News....
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">MEXICO</div>
+              <div class="date-tag">Oct. 24, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/tasting-nostalgia.md">
+                Tasting Nostalgia
+                </a>    
+            </div>
+            <div class="post-preview">
+                Mexico&#39;s new president, Claudia Sheinbaum, announced a new agriculture plan on Tuesday to boost &#34;food sovereignty&#34; in the country by returning to the staples and stores of its past, while critics b...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">COLOMBIA</div>
+              <div class="date-tag">Sep. 20, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/fits-and-starts.md">
+                Fits and Starts
+                </a>    
+            </div>
+            <div class="post-preview">
+                The Colombian government suspended peace negotiations with the National Liberation Army (ELN) following an attack by the rebel group earlier this week, in what is another setback for leftist Presid...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">CHINA</div>
+              <div class="date-tag">Oct. 31, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/double-double-toil-and-trouble.md">
+                Double, Double Toil and Trouble
+                </a>    
+            </div>
+            <div class="post-preview">
+                Police in China&#39;s biggest cities are cracking down on Halloween festivities this year, clearing streets of partygoers and interrogating costume choices, fearing that the holiday has become a sign o...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">CHAGOS ISLANDS</div>
+              <div class="date-tag">Oct. 4, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/letting-go.md">
+                Letting Go
+                </a>    
+            </div>
+            <div class="post-preview">
+                The United Kingdom on Thursday agreed to hand over the Chagos Islands to Mauritius, ending a decades-long dispute over the Indian Ocean archipelago that is home to a strategic US-UK military base, ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">CANADA</div>
+              <div class="date-tag">Sep. 18, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/getting-wobbly.md">
+                Getting Wobbly
+                </a>    
+            </div>
+            <div class="post-preview">
+                Canada&#39;s New Democratic Party (NDP) withdrew from the coalition government headed by Prime Minister Justin Trudeau and his Liberal Party, with commentators speculating that the weakened Canadian le...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">PHILIPPINES</div>
+              <div class="date-tag">Nov. 1, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/not-sorry.md">
+                Not Sorry
+                </a>    
+            </div>
+            <div class="post-preview">
+                Former Philippine President Rodrigo Duterte said he kept a &#34;death squad&#34; of convicts instructed to kill other &#34;criminals&#34; as part of his &#34;war on drugs&#34; in his testimony this week to a Senate hearin...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ZIMBABWE</div>
+              <div class="date-tag">Dec. 4, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/just-saying-no.md">
+                Just Saying &#39;No&#39;
+                </a>    
+            </div>
+            <div class="post-preview">
+                A Zimbabwean high court judge has ruled that a law prohibiting abortion access for girls under the age of 18 and women raped by their husbands is unconstitutional, a landmark ruling for the conserv...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ZAMBIA</div>
+              <div class="date-tag">Sep. 26, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/constitutional-court.md">
+                Constitutional Court
+                </a>    
+            </div>
+            <div class="post-preview">
+                Zambian President Hakainde Hichilema suspended three constitutional court judges this week over alleged judicial misconduct, a move that has drawn criticism from the opposition and accusations of p...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">KENYA</div>
+              <div class="date-tag">Oct. 10, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/friends-to-foes.md">
+                Friends to Foes
+                </a>    
+            </div>
+            <div class="post-preview">
+                Kenyan lawmakers overwhelmingly voted to impeach Vice President Rigathi Gachagua this week over allegations of corruption, heightening political tensions with the Kenyan president, William Ruto, th...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">JAPAN</div>
+              <div class="date-tag">Oct. 11, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-customer-dethroned.md">
+                The Customer, Dethroned
+                </a>    
+            </div>
+            <div class="post-preview">
+                A Japanese word for customer, kyakusama, translates as &#34;honored guest.&#34; But these days, bad behavior by these &#34;guests&#34; has gotten so out of hand that Tokyo is putting them on notice, the Japan Time...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ZAMBIA</div>
+              <div class="date-tag">Sep. 26, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-feud.md">
+                The Feud
+                </a>    
+            </div>
+            <div class="post-preview">
+                Zambian President Hakainde Hichilema suspended three constitutional court judges this week over alleged judicial misconduct, a move that has drawn criticism from the opposition and accusations of p...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">AUSTRIA</div>
+              <div class="date-tag">Oct. 1, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/lame-duck-wins.md">
+                Lame-Duck Wins
+                </a>    
+            </div>
+            <div class="post-preview">
+                Austria&#39;s Freedom Party (FPÖ) secured in Sunday&#39;s parliamentary elections the country&#39;s first far-right election victory since its reestablishment as a democracy in 1945, even as it fell short of a...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">SERBIA</div>
+              <div class="date-tag">Jan. 29, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/resignation-101.md">
+                Resignation 101
+                </a>    
+            </div>
+            <div class="post-preview">
+                Serbia&#39;s prime minister Milos Vučević stepped down Tuesday in an attempt to calm political tensions following weeks of massive student-led anti-corruption protests over the deadly collapse of a con...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">KAZAKHSTAN</div>
+              <div class="date-tag">Oct. 9, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/nukes-please.md">
+                Nukes, Please
+                </a>    
+            </div>
+            <div class="post-preview">
+                Kazakh voters have overwhelmingly approved the building of the country&#39;s first nuclear power plant to replace its coal-fired power production in a landmark referendum over the weekend that was crit...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">KENYA</div>
+              <div class="date-tag">Dec. 11, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-right-to-live.md">
+                The Right to Live
+                </a>    
+            </div>
+            <div class="post-preview">
+                Police in Kenya scuffled with protesters in demonstrations across the country against gender-based violence and femicide Tuesday, following national outrage over a string of brutal killings of wome...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">[BOLIVIA]</div>
+              <div class="date-tag">Oct. 29, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/fists-and-bullets.md">
+                Fists and Bullets
+                </a>    
+            </div>
+            <div class="post-preview">
+                Former Bolivian President Evo Morales accused the government of incumbent President Luis Arce of attempting to assassinate him Sunday, further heightening tensions in the country that were already ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">BOLIVIA</div>
+              <div class="date-tag">Sep. 19, 2023</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/feudal-politics.md">
+                Feudal Politics
+                </a>    
+            </div>
+            <div class="post-preview">
+                Violence broke out in Bolivia during a march in support of popular former President Evo Morales after counter-protesters blocked the route, underscoring an escalating power struggle in the country,...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">HAITI</div>
+              <div class="date-tag">Dec. 10, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/voodoo-vendetta.md">
+                Voodoo Vendetta
+                </a>    
+            </div>
+            <div class="post-preview">
+                Around 200 people were killed over the weekend in Haiti&#39;s capital Port-au-Prince in a massacre ordered by a powerful gang leader who targeted Voodoo practitioners and the elderly in a personal vend...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">GREECE</div>
+              <div class="date-tag">Jan. 28, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/justice-derailed.md">
+                Justice Derailed
+                </a>    
+            </div>
+            <div class="post-preview">
+                Tens of thousands of Greeks protested across the country on Sunday to demand justice for the 57 people who died in Greece&#39;s worst rail disaster two years ago, the Associated Press reported. The pro...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">HUNGARY</div>
+              <div class="date-tag">Oct. 7, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/truth-consequences.md">
+                Truth &amp; Consequences
+                </a>    
+            </div>
+            <div class="post-preview">
+                Thousands of people protested outside the headquarters of Hungary&#39;s public media corporation over the weekend to denounce state-controlled media for being a &#34;propaganda factory&#34; for the government ...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">JAPAN</div>
+              <div class="date-tag">Sep. 7, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/righting-wrongs.md">
+                Righting Wrongs
+                </a>    
+            </div>
+            <div class="post-preview">
+                The world&#39;s longest-serving death row inmate, Iwao Hakamata, who was convicted of murdering four people in 1966, was acquitted Thursday in a retrial in a case that has sparked debate over the fairn...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">URUGUAY</div>
+              <div class="date-tag">Nov. 26, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-politics-of-humility.md">
+                The Politics of Humility
+                </a>    
+            </div>
+            <div class="post-preview">
+                Center-left opposition candidate Yamandú Orsi won the presidential election in Uruguay, ousting the conservative government coalition candidate, Alvaro Delgado, by a few points in Sunday&#39;s runoff e...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">SERBIA</div>
+              <div class="date-tag">Nov. 13, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/canopy-of-corruption.md">
+                Canopy of Corruption
+                </a>    
+            </div>
+            <div class="post-preview">
+                Thousands of Serbian protestors marched in the capital city of Belgrade on Monday, calling for the resignation of the prime minister and other top officials, the latest of ongoing and often violent...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">GERMANY</div>
+              <div class="date-tag">Jan. 31, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-faulty-firewall.md">
+                The Faulty &#39;Firewall&#39;
+                </a>    
+            </div>
+            <div class="post-preview">
+                Germany&#39;s opposition conservatives won parliamentary approval on Wednesday for a proposal to restrict migration, a vote that stirred controversy because it breached a &#34;firewall&#34; by working with the...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ITALY</div>
+              <div class="date-tag">Sep. 17, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/no-entry.md">
+                No Entry
+                </a>    
+            </div>
+            <div class="post-preview">
+                Italian Deputy Prime Minister Matteo Salvini may be facing up to six years in prison for a 2019 decision that blocked a ship assisting migrants from docking in Italy, the Associated Press reported....
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">THAILAND</div>
+              <div class="date-tag">Jan. 24, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/thai-do.md">
+                Thai Do
+                </a>    
+            </div>
+            <div class="post-preview">
+                Hundreds of same-sex couples got married in Thailand on Thursday after the country became the first in Southeast Asia to recognize marriage equality in a landmark bill, CNN reported. The new legisl...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">SOUTH AFRICA</div>
+              <div class="date-tag">Nov. 15, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/the-standoff.md">
+                The Standoff
+                </a>    
+            </div>
+            <div class="post-preview">
+                South Africa&#39;s government said will not help 4,000 illegal miners stuck inside a mine without basic necessities because they want to &#34;smoke them out&#34; and stop the illegal mining in the country, the...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ITALY</div>
+              <div class="date-tag">Jan. 9, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/decree-of-health.md">
+                Decree of Health
+                </a>    
+            </div>
+            <div class="post-preview">
+                The small village of Belcastro in Italy has banned its residents from becoming seriously ill, amid a healthcare crisis in the southern region of Calabria, the BBC reported. A decree from the villag...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">SINGAPORE</div>
+              <div class="date-tag">Sep. 25, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/dirty-hands.md">
+                Dirty Hands
+                </a>    
+            </div>
+            <div class="post-preview">
+                Singapore&#39;s former Transport Minister S. Iswaran pled guilty on Tuesday to illegally receiving gifts while in office, in a landmark case that has rocked the Southeast Asian financial hub which prid...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">ECUADOR</div>
+              <div class="date-tag">Sep. 25, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/guayaquil-grief.md">
+                Guayaquil Grief
+                </a>    
+            </div>
+            <div class="post-preview">
+                Ecuadoran officials identified four charred bodies as the remains of four boys who went missing in early December near a military base, in a case posing a challenge to President Daniel Noboa and hi...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">CHAGOS ISLANDS/MAURITIUS</div>
+              <div class="date-tag">Dec. 20, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/lets-make-a-deal.md">
+                Let&#39;s Make a Deal
+                </a>    
+            </div>
+            <div class="post-preview">
+                A contentious deal for the United Kingdom to cede control of the Chagos Islands to Mauritius is being challenged by the African island country&#39;s new prime minister, who is now offering his own &#34;cou...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">COLOMBIA</div>
+              <div class="date-tag">Jan. 21, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/peace-in-pieces.md">
+                Peace in Pieces
+                </a>    
+            </div>
+            <div class="post-preview">
+                More than 80 people were killed in attacks by the National Liberation Army (ELN) in northeastern Colombia over the weekend, an offensive that came after the government suspended peace talks with th...
+              </div>
+          </div>
+        </div>
+      
+      <hr style="background-color:#000;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-12 col-md-2">
+            <div style="text-align:start; ">
+                
+              <div class="country-tag">AFGHANISTAN</div>
+              <div class="date-tag">Dec. 6, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-12 col-md-10" id="underline_hover">
+            <div class="post-title">
+                <a href="https://vasilisaai.github.io/portfolio/globalpost//portfolio/globalpost/post/midwife-crisis.md">
+                Midwife Crisis
+                </a>    
+            </div>
+            <div class="post-preview">
+                The Taliban in Afghanistan banned women from attending courses training them to be midwives and nurses, blocking women&#39;s last route to higher education and creating a dire health threat in the coun...
+              </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     

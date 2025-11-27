@@ -1,0 +1,26 @@
+{% extends "pages-index.html" %}
+
+{% block content %}
+
+<style>
+.image-frame {
+  border: 1px solid black;   /* adjust thickness + color */
+  padding: 10px;            /* space between border and images */
+}
+</style>
+
+<div class="row" style="padding-top: 50px;">
+    <div class="col"></div>
+  
+    <div class="col-lg-6">
+      <div class="image-frame">
+        <img src="{{ url_for('static', filename='images/Likitsakos-CV.jpg') }}" width="100%">
+        <img src="{{ url_for('static', filename='images/Likitsakos-CV-2.jpg') }}" width="100%">
+      </div>
+    </div>
+  
+    <div class="col"></div>
+  </div>
+  
+
+{% endblock %}

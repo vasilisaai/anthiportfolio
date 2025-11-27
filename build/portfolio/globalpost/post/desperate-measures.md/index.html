@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <!-- BOOTSTRAP CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../../static/css/main.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .navbar {
+          height: 60px;
+          padding-left: 40px;
+          padding-right: 40px;
+          gap: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 30px;
+      }
+      body {
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .navbar-nav {
+          gap: 40px;
+          font-size: 20px;
+        }
+        .nav-link {
+          color: black !important;
+        }
+      .navbar .nav-link:hover .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+      }
+      .text-center {
+        padding-left: 15vw;
+        padding-right: 15vw;
+      }
+      .custom-toggler {
+        border: none;
+      }
+      .contents {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .custom-toggler:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .toggler-icon {
+        display: block;
+        width: 25px;
+        height: .5px;
+        background-color: black;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+     </style>
+</head>
+<body>
+  <div class="contents">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/#">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      
+<style>
+  body {
+    margin: 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+</style>
+
+<div class="container" style="text-align:left; padding: 80px 200px; ">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+
+  <div class="country-tag" style="line-height: 30px;">ITALY</div>
+
+  <h1 class="post-title"> Desperate Measures</h1>
+
+  <div class="date-tag">Sep. 26, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>Italy moved to deploy its army to guard hospital staff in Calabria and
+ elsewhere after escalating violence by patients and their family members
+ across Italy has left dozens of doctors, nurses and other medical staff
+ injured, Euro Weekly News
+ <a href="https://post.spmailtechnol.com/f/a/TSLbZn0LYJClOyivzjA4UQ~~/AASU4wA~/RgRo1mHXP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvcTQ2Z3UwMnowZS8_bGhfYWlkPTExNDUwJmxoX2NpZD1zbDRiZjU0eGQxVwNzcGNCCmbr2NzzZgSDRXVSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>One well-known incident
+ <a href="https://post.spmailtechnol.com/f/a/o8cNV62HMUzGMaObgSyyEw~~/AASU4wA~/RgRo1mHXP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvMTBvbG15NXdhNC8_bGhfYWlkPTExNDUwJmxoX2NpZD1zbDRiZjU0eGQxVwNzcGNCCmbr2NzzZgSDRXVSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">captured</a>
+ on video saw doctors and nurses forced to barricade themselves in a room
+ at the Policlinico hospital in Foggia, in the southern region of Puglia,
+ in early September after about 50 enraged relatives and friends of a
+ 23-year-old woman who died after an emergency operation turned on
+ medical staff, the Guardian
+ <a href="https://post.spmailtechnol.com/f/a/BjMT_PwZxkKqmtC_chnzAA~~/AASU4wA~/RgRo1mHXP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvbGlqMmVxbHk5Mi8_bGhfYWlkPTExNDUwJmxoX2NpZD1zbDRiZjU0eGQxVwNzcGNCCmbr2NzzZgSDRXVSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>Some healthcare workers were injured, with bloodstains visible on the
+ emergency room floor.</p>
+<p>Two days later, the same hospital reported another attack, with a
+ patient kicking and punching three emergency room nurses,
+ <a href="https://post.spmailtechnol.com/f/a/NK7Qy0GtafllHJ5PA3k4_A~~/AASU4wA~/RgRo1mHXP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvM2FodDV6ajJraC8_bGhfYWlkPTExNDUwJmxoX2NpZD1zbDRiZjU0eGQxVwNzcGNCCmbr2NzzZgSDRXVSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a>
+ to Italian newswire ANSA. Then on Tuesday, also in Puglia, a patient
+ <a href="https://post.spmailtechnol.com/f/a/Gdby03p2I-3-tb4oI5sHKQ~~/AASU4wA~/RgRo1mHXP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZnhrcDcyOGV3MC8_bGhfYWlkPTExNDUwJmxoX2NpZD1zbDRiZjU0eGQxVwNzcGNCCmbr2NzzZgSDRXVSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">assaulted a
+ doctor</a>
+ at the Francesco Ferrari hospital in Casarano.</p>
+<p>After the recorded Foggia attack, the hospital threatened to shut the
+ emergency room, the Associated Press
+ <a href="https://post.spmailtechnol.com/f/a/rkF1_Xt_K4mTncTJwEtQPQ~~/AASU4wA~/RgRo1mHXP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvczc2cHc4MmV0NC8_bGhfYWlkPTExNDUwJmxoX2NpZD1zbDRiZjU0eGQxVwNzcGNCCmbr2NzzZgSDRXVSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">noted</a>.</p>
+<p>"We have never seen such levels of aggression in the past decade,"
+ Antonio De Palma, president of the Nursing Up union, told the AP. "We
+ are now at a point where considering military protection in hospitals is
+ no longer a far-fetched idea. We cannot wait any longer."</p>
+<p>In Italy, there had been 16,000 reported cases of physical and verbal
+ assaults on medical staff by patients and their relatives in 2023, the
+ latest figures available.</p>
+<p>While these attacks have been occurring throughout the entire country,
+ the frequency of the attacks has been higher in southern Italy, leading
+ the doctors' guild to request the army be sent to protect staff.</p>
+<p>The reasons behind the attacks have been attributed to understaffing at
+ hospitals and clinics, and long wait times for procedures that result in
+ frustration for patients and their relatives.</p>
+<p>At the same time, Italy's salary cap legislation has kept wages low and
+ nearly half of clinical posts in emergency medicine have remained
+ unfilled as of 2022. Meanwhile, the Covid-19 pandemic worsened the
+ staffing crisis, with many health professionals emigrating for
+ opportunities abroad. As a result, Italy is short of around 30,000
+ doctors.</p></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+
+<!-- BOOTSTRAP JS (match to your CSS version) -->
+<script src="ht<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+     
