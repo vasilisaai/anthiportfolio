@@ -1,0 +1,173 @@
+{% extends "pages-index.html" %}
+
+{% block content %}
+<style>
+
+  .name-text {
+    font-size: 140px;   /* desktop */
+    line-height: 0.8;
+  }
+
+  /* iPhone / small phone screens */
+  @media (max-width: 576px) {
+    .name-text {
+      font-size: 100px;   /* choose any size */
+    }
+  }
+
+</style>
+
+<div class="parent" 
+     style="height: 94vh; display: flex; flex-direction: column; overflow: hidden;">
+  
+  <!-- IMAGE ROW -->
+  <div class="row" style="flex: 0 1 auto;">
+    <div class="col sm-1"></div>
+
+    <div class="col-sm-10 col-lg-6" style="">
+      <div id="pictureFrame"
+           style="
+             overflow:hidden;
+             cursor:pointer;
+             width:100%;
+             height: 600px;
+             display:flex;
+             margin-top:10%;
+             justify-content:center;
+             align-items:center;">
+        <img src="{{ url_for('static', filename='images/Colombia/IMG_7556.JPG') }}" 
+             alt="photo"
+             style="object-fit:contain; width:90%;">
+      </div>
+    </div>
+
+    <div class="col sm-1">
+      <div id="caption" class="caption"
+           style="font-family:'Times New Roman', Times, serif; font-size:0px;">
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="flex: 0 1 auto; margin-top: auto; min-height: 0;">
+    <div class="col name-text"
+         style="
+           padding:0;
+           padding-left: 40px;
+           display:flex;
+           flex-shrink:1;
+           max-height: 25vh;
+           align-items:flex-end;
+         ">
+      <div style="
+            font-family:'Times New Roman', Times, serif;
+
+            color:black;
+            white-space:normal;     /* ← allows wrapping instead of overflow */
+            overflow-wrap:break-word;
+          ">
+        Anthi Likitsakos
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
+
+<script>
+    const frame = document.getElementById('pictureFrame');
+  
+    // 0 = base image already in DOM
+    const images = [
+      { src: "{{ url_for('static', filename='images/Colombia/IMG_7556.JPG') }}", text: "Images from Colombia" },
+      { src: "{{ url_for('static', filename='images/Colombia/IMG_7554.JPG') }}", text: "Tiles and terraces of Medellín." },
+      { src: "{{ url_for('static', filename='images/Colombia/IMG_7551.JPG') }}", text: "Shadows, sunlight, and handmade patterns." },
+      { src: "{{ url_for('static', filename='images/Colombia/thesis.png') }}", text: "Lush textures and tropical craft." }
+    ];
+  
+    const originalCaption = caption.innerHTML;
+  
+    // Persist direction on the element to avoid duplicate state (add/remove)
+    if (!frame.dataset.dir) frame.dataset.dir = 'add';
+  
+    function countStack() {
+      return frame.querySelectorAll('.stack-img').length; // includes base
+    }
+  
+    function updateCaptionForTop() {
+      const c = countStack();
+      if (c === 1) {
+        fadeCaptionToHTML(originalCaption);
+      } else {
+        // top image index in `images` is c - 1
+        const i = c - 1;
+        fadeCaptionToHTML(`
+          <p>${images[i].text}</p>
+        `);
+      }
+    }
+  
+    function fadeCaptionToHTML(html) {
+  caption.innerHTML = html;
+}
+  
+    function addNext() {
+      const c = countStack();
+      if (c >= images.length) {
+        frame.dataset.dir = 'remove';
+        return;
+      }
+      const next = images[c]; // next index to show
+      const img = document.createElement('img');
+      img.src = next.src;
+      img.className = 'img-fluid stack-img';
+  
+      const rotation = Math.random() * 20 - 10;
+      const offset = c * 6;
+  
+      img.style = `
+        max-width: 90%; max-height: 90%;
+        object-fit: contain; position: absolute;
+        z-index: ${c + 1};
+        transform: translate(${offset}px, ${offset}px) rotate(${rotation}deg);
+        opacity: 0;
+      `;
+  
+      frame.appendChild(img);
+      requestAnimationFrame(() => { img.style.opacity = 1; });
+  
+      // After adding, if we've reached the end, flip direction
+      if (c + 1 === images.length) frame.dataset.dir = 'remove';
+  
+      // Update caption to the new top (index c)
+      updateCaptionForTop();
+    }
+  
+    function removeTop() {
+      const c = countStack();
+      if (c <= 1) {
+        frame.dataset.dir = 'add';
+        return;
+      }
+      const top = frame.querySelector('.stack-img:last-of-type');
+      top.style.opacity = 0;
+      setTimeout(() => {
+        top.remove();
+        const newCount = countStack();
+        // If we're back to the base image, flip direction to add
+        if (newCount === 1) frame.dataset.dir = 'add';
+        updateCaptionForTop();
+      }, 400);
+    }
+  
+    frame.addEventListener('click', () => {
+      if (frame.dataset.dir === 'add') {
+        addNext();
+      } else {
+        removeTop();
+      }
+    });
+  </script>
+  
+  
+  
+{% endblock %}
