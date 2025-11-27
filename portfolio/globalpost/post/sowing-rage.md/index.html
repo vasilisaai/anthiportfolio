@@ -110,9 +110,9 @@
   }
 
   .post {
-  padding: 10px 0;
-  align-items: flex-start;
-}
+    padding: 10px 0;
+    align-items: center;
+  }
 
   .featured-img img {
     max-width: 100%;
@@ -127,12 +127,13 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;  /* number of lines */
   -webkit-box-orient: vertical;
-  font-size: 18px;
 }
 
 .post-title {
-    font-size: 24px;
-    line-height: 1.5;
+    font-size:70px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:90px;
 }
 
 .post-title a {
@@ -145,22 +146,31 @@
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
-    position: relative;
-    top: 10px;   /* adjust 2–6px until it feels perfect */
 }
 
 .date-tag {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-size: 15px;
-    line-height: 2;
-    position: relative;
-    top: 10px;   /* adjust 2–6px until it feels perfect */
+}
+
+.post-body {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
 }
 </style>
 
 <div class="container" style="text-align:left; padding: 80px 200px; ">
-  <nav class="navbar navbar-expand-lg navbar-light" style="padding-left:0;height: 40px">
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="toggler-icon"></span>
@@ -171,13 +181,8 @@
     <div class="navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" style="padding-left: 0 !important;" href="/portfolio/globalpost">Global Post</a>
+          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/portfolio/globalpost">Global Post</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Journal</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Offline</a>
         </li>
       </ul>
     </div>
@@ -185,14 +190,64 @@
   <hr style="background-color:#000; border-width:1px; margin:0;">
   <hr style="background-color:#000; border-width:1px; margin-top:2px;">
 
-  <h1 style="font-size:80px; font-weight: bold; line-height:150px;"></h1>
-  <h1 style="font-style:italic; font-size:35px; line-height: 40px;"></h1>
+  <div class="country-tag" style="line-height: 30px;">FRANCE</div>
+
+  <h1 class="post-title"> Sowing Rage</h1>
+
+  <div class="date-tag">Nov. 19, 2024</div>
+  
 
   <div class="container" style="text-align:left; padding:0;">
-    <div class="post-feed">
-      <br>
 
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
       
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>Angry farmers staged dozens of demonstrations across France Monday,
+ protesting against a trade pact between the European Union and the
+ Mercosur trade bloc of South American countries, which they say will
+ threaten their livelihoods, the Associated Press
+ <a href="https://post.spmailtechnol.com/f/a/DEdBNUK6gitSzXVY0AFtdQ~~/AASU4wA~/RgRpHvJlP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvZHczNWUwMXVmNi8_bGhfYWlkPTExNDUwJmxoX2NpZD13MWhlY3lkcThuVwNzcGNCCmc7ZW08Z_dmVdxSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>Around 300 farmers protested in the southeastern town of Le
+ Cannet-des-Maures, where one sign unfurled along a road read, "Stop the
+ promises, start with actions." Local farmers also placed a cross next to
+ a mock gallows with a message reading, "France's agriculture in danger,"
+ Radio France Internationale
+ <a href="https://post.spmailtechnol.com/f/a/Y30S8uqjRX21nTGQz1xw_A~~/AASU4wA~/RgRpHvJlP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvbXVwcjI1dnJsZS8_bGhfYWlkPTExNDUwJmxoX2NpZD13MWhlY3lkcThuVwNzcGNCCmc7ZW08Z_dmVdxSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">wrote</a>.</p>
+<p>In the eastern city of Lyon, farmers tore down municipal signs and
+ dumped them in front of a museum. Protest organizers said more than 80
+ protests were being staged across the country.</p>
+<p>The protests echo similar ones last winter across Europe over Ukrainian
+ imports, with farmers blocking roads and highways for weeks.</p>
+<p>The EU-Mercosur trade agreement, an agriculture trade partnership
+ between the EU and Brazil, Argentina, Paraguay, Bolivia, and Uruguay,
+ would create the world's largest free trade zone. The deal was initially
+ agreed to in 2019, but negotiations slowed after opposition from
+ European farmers and some European countries.</p>
+<p>This new wave of protests and anger from French farmers stems from fears
+ that the agreement could be finalized at the G20 summit in Rio de
+ Janeiro this week. The farmers say they deal with excessive bureaucracy,
+ have had poor harvests, and have already seen their income drop
+ substantially over the past few years. Now, farmers worry that the
+ Mercosur deal will impact their incomes further by being forced to
+ compete with cheaper products that face fewer regulations and
+ environmental standards.</p>
+<p>Meanwhile, farmers say Monday's protests are just the beginning. A
+ spokesman for France's top farming union, Yohann Barbe, said that the
+ scale of the protests was going "to be unprecedented," adding that,
+ "Farmers are still just as irritated as ever by a government that is
+ dragging its feet."</p>
+<p>On Sunday, French President Emmanuel Macron said that France would
+ "continue to oppose" the trade deal while visiting Argentina's President
+ Javier Milei ahead of the G20 summit. Other European nations such as
+ Germany and Spain, support the deal, hoping to expand the EU's network
+ of trade and maintain economic influence geopolitically.</p></div>
+        </div>
     </div>
   </div>
 </div>
