@@ -76,12 +76,12 @@ body {
 /* FULL-SCREEN MOBILE NAV */
 @media (max-width: 991.98px) {
 
-.navbar {
+.mobile-nav {
   position: relative;
   z-index: 1050;
 }
 
-.navbar-collapse {
+.mobile-navbar-collapse {
   position: fixed;
   display: flex;
   align-items: center;        /* vertical center */
@@ -95,14 +95,13 @@ body {
   padding-bottom: 40px;
   overflow-y: auto;
   transform: translateY(-100%);
-  transition: transform 0.3s ease-in-out;
 }
 
-.navbar-collapse.show {
+.mobile-navbar-collapse.show {
   transform: translateY(0);
 }
 
-.navbar-nav {
+.mobile-navbar-nav {
     width: 60%;
     max-width: 900px;
     align-items: flex-start;   /* LEFT align text */
@@ -110,7 +109,7 @@ body {
     padding-left: 0px;
 }
 
-.nav-link {
+.mobile-nav-link {
   font-size: 22px;
   width: 100%;
 }
@@ -160,7 +159,10 @@ body.nav-open {
 }
 
 </style>
-<nav class="navbar navbar-expand-lg navbar-light">
+
+<body style="height:100%">
+  
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light">
     <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/anthiportfolio/">Anthi</a>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,32 +171,35 @@ body.nav-open {
       <span class="toggler-icon"></span>
     </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarNav">
         <button class="mobile-close" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Close menu">
           <span class="close-line"></span>
           <span class="close-line"></span>
         </button>
         
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mobile-navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Projects</a>
+            <a class="nav-link mobile-nav-link" href="">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/anthiportfolio/resume/">Resume</a>
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Photojournalism</a>
+            <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/anthiportfolio/contact/">Contact</a>
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+
+</body>
 
   <script>
     $('#navbarNav').on('shown.bs.collapse', function () {
@@ -218,19 +223,21 @@ body.nav-open {
   .header {
     font-size:65px;
     font-weight: bold;
-    line-height:130px;
+    line-height:60px;
+    padding: 40px 0  20px 0;
   }
 
   .subheader {
     font-style: italic;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 28px;
+    padding: 0px  0 40px 0;
   }
 
   .post-feed {
     text-align: left;
     font-size: 18px;
-    padding: 30px 0;
+    padding: 0px 0;
     
   }
 
@@ -271,7 +278,7 @@ body.nav-open {
     font-weight: bold;
     font-size: 12px;
     position: relative;
-    top: 10px;   /* adjust 2–6px until it feels perfect */
+    top: 12px;   /* adjust 2–6px until it feels perfect */
 }
 
 .date-tag {
@@ -282,25 +289,33 @@ body.nav-open {
     position: relative;
     top: 10px;   /* adjust 2–6px until it feels perfect */
 }
+
+  /* iPhone / small phone screens */
+  @media (max-width: 576px) {
+    .header {
+      font-size: 40px;   /* choose any size */
+    }
+  }
+
 </style>
 
 
 <div class="container" style="text-align:left;">
   <div class="row display-flex justify-content-center">
     <!-- LEFT COLUMN: country + date -->
-    <div class="col-7">
+    <div class="col-sm-12 col-md-8">
       <br>
       <br>
 
   <nav class="navbar navbar-expand navbar-light" style="padding-left:0;min-height: 40px">
 
-    <div id="navbarNav">
+    <div id="">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" style="padding-left: 0 !important;" href="/anthiportfolio/portfolio/globalpost">GlobalPost</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Journal</a>
+          <a class="nav-link" href="/anthiportfolio/portfolio/science">Discoveries</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="">Offline</a>
@@ -316,6 +331,7 @@ body.nav-open {
   <h1 class="header">GlobalPost</h1>
   <h1 class="subheader">Reports on worldwide breaking news written for<span style='font-style:normal'> GlopalPost</span>, the largest daily newsletter devoted to world news.</h1>
 
+        
   <div class="container" style="text-align:left; padding:0;">
     <div class="post-feed">
         
@@ -1985,6 +2001,9 @@ body.nav-open {
       
     </div>
   </div>
+</div>
+
+
 </div>
 
       </div>

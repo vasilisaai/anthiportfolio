@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+     <!-- BOOTSTRAP CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="../../static/main.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+</head>
+
+<style>
+  .navbar {
+    min-height: 50px;
+    max-height: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+.navbar-nav {
+    gap: 30px;
+    font-size: 16px;
+  }
+  .nav-link {
+    color: black !important;
+  }
+.navbar .nav-link:hover .nav-link.active {
+  color: rgb(0, 0, 0) !important;
+}
+.text-center {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.custom-toggler {
+  border: none;
+}
+.contents {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.toggler-icon {
+  display: block;
+  width: 25px;
+  height: .5px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+.mobile-close {
+  height: 0px;
+  background: none;
+  border: none;
+}
+/* FULL-SCREEN MOBILE NAV */
+@media (max-width: 991.98px) {
+
+.mobile-nav {
+  position: relative;
+  z-index: 1050;
+}
+
+.mobile-navbar-collapse {
+  position: fixed;
+  display: flex;
+  align-items: center;        /* vertical center */
+   justify-content: center;    /* horizontal center */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+  transform: translateY(-100%);
+}
+
+.mobile-navbar-collapse.show {
+  transform: translateY(0);
+}
+
+.mobile-navbar-nav {
+    width: 60%;
+    max-width: 900px;
+    align-items: flex-start;   /* LEFT align text */
+    text-align: left;
+    padding-left: 0px;
+}
+
+.mobile-nav-link {
+  font-size: 22px;
+  width: 100%;
+}
+
+/* Lock body scroll when menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.close-line {
+  width: 20px;
+  height: 0.5px;
+  background: black;
+  display: block;
+}
+
+/* Rotate into an "X" */
+.mobile-close .close-line:first-child {
+  transform: rotate(40deg) translate(3px, 3px);
+}
+
+.mobile-close .close-line:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.mobile-close:focus {
+  outline: none;
+}
+
+}
+
+</style>
+
+<body style="height:100%">
+  
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light">
+    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/anthiportfolio/">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarNav">
+        <button class="mobile-close" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+        
+        <ul class="navbar-nav mobile-navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mobile-nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+
+  <script>
+    $('#navbarNav').on('shown.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+  
+    $('#navbarNav').on('hidden.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
+  </script>
+
+
+  <body>
+    <div class="contents">
+        
+<style>
+  body {
+    margin: 0;
+  }
+
+  .header {
+    font-size:65px;
+    font-weight: bold;
+    line-height:60px;
+    padding: 40px 0  20px 0;
+  }
+
+  .subheader {
+    font-style: italic;
+    font-size: 22px;
+    line-height: 28px;
+    padding: 0px  0 40px 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 0px 0;
+    
+  }
+
+  .post {
+  padding: 10px 0;
+  align-items: flex-start;
+}
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.2em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+  font-size: 15px;
+}
+
+.post-title {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top: 12px;   /* adjust 2–6px until it feels perfect */
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 2;
+    position: relative;
+    top: 10px;   /* adjust 2–6px until it feels perfect */
+}
+
+  /* iPhone / small phone screens */
+  @media (max-width: 576px) {
+    .header {
+      font-size: 40px;   /* choose any size */
+    }
+  }
+
+</style>
+
+
+<div class="container" style="text-align:left;">
+  <div class="row display-flex justify-content-center">
+    <!-- LEFT COLUMN: country + date -->
+    <div class="col-sm-12 col-md-8">
+      <br>
+      <br>
+
+  <nav class="navbar navbar-expand navbar-light" style="padding-left:0;min-height: 40px">
+
+    <div id="">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important;" href="/anthiportfolio/portfolio/globalpost">GlobalPost</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/anthiportfolio/portfolio/science">Discoveries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Offline</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <hr style="background-color:#000; border-width:0.5px; margin:0;">
+  <hr style="background-color:#000; border-width:0.5px; margin-top:2px;">
+
+  <h1 class="header">Science Discoveries</h1>
+  <h1 class="subheader">Scientific discoveries sourced and written for <span style='font-style:normal'> GlopalPost</span>.</h1>
+
+        
+
+  <div class="container" style="text-align:left; padding:0;">
+    <div class="post-feed">
+        
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 26, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-ocean-overachiever.md">
+                Ocean Overachiever
+            </a>    
+            </div>
+            <div class="post-preview">
+                A typical migration route for humpbacks is around 4,971 miles, making this epic journey close to double that of most whales. Was it a quest for love? A hunt for food? Scientists aren’t sure, accord...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Nov. 22, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-universal-cues.md">
+                Universal Cues
+            </a>    
+            </div>
+            <div class="post-preview">
+                It turns out, some are, according to new research published this month in the Journal of the Acoustical Society of America. In the study, an interdisciplinary research team of linguists and bioacou...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Oct. 30, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-an-appetizing-asteroid.md">
+                An Appetizing Asteroid
+            </a>    
+            </div>
+            <div class="post-preview">
+                But for longer missions or even life in space, scientists are coming up with alternative food methods that could sustain human life. Additionally, the crew at the International Space Station (ISS) ...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Jan. 3, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-maternally-speaking.md">
+                Maternally Speaking
+            </a>    
+            </div>
+            <div class="post-preview">
+                However, a new study has challenged that traditional approach. New research shows that mothers have twice the impact on language exposure as fathers, the study showed, with bilingual families livin...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Jan. 14, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-the-pooch-test.md">
+                The Pooch Test
+            </a>    
+            </div>
+            <div class="post-preview">
+                Welcome to a new, experimental cancer screening method that is pairing three dogs with artificial intelligence and is able to detect the odor of cancer on patients’ breaths, according to a recent s...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Oct. 17, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-drip-and-drop.md">
+                Drip and Drop
+            </a>    
+            </div>
+            <div class="post-preview">
+                Beneath the Konya Basin, a large, tectonically active depression in the region, the Earth’s crust is sinking into the mantle, pulling the surface of the basin and the plateau that surrounds it down...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 4, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-silky-silence.md">
+                Silky Silence
+            </a>    
+            </div>
+            <div class="post-preview">
+                Now, researchers from the Massachusetts Institute of Technology and other institutions may have developed a simple solution to noise pollution – silk. In a new study, the research team details how ...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 9, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-basic-instincts.md">
+                Basic Instincts
+            </a>    
+            </div>
+            <div class="post-preview">
+                For example, Thucydides, an ancient Greek historian, claimed that rats, dogs, snakes, and weasels left the city of Helice shortly before an earthquake in 373 BCE. Similarly, snakes and rats were ob...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Jan. 20, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-forget-me.md">
+                Forget Me
+            </a>    
+            </div>
+            <div class="post-preview">
+                But now, fiction may become reality after scientists found a promising new approach to wiping such memories and replacing them with positive ones during sleep, according to a new study. The interna...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Nov. 1, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-reef-relief.md">
+                Reef Relief
+            </a>    
+            </div>
+            <div class="post-preview">
+                Now, one team of researchers believes they may be on the way to stopping the destruction – by breeding corals with improved heat tolerance. “This (research) shows that selective breeding is feasibl...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 17, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-lost-in-evaporation.md">
+                Lost in Evaporation
+            </a>    
+            </div>
+            <div class="post-preview">
+                For years, scientists were puzzled by how such an event could have occurred. But now, a new study published in Nature Communications has provided new insights into the evaporation process, accordin...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Oct. 7, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-shroom-with-a-view.md">
+                Shroom with a View
+            </a>    
+            </div>
+            <div class="post-preview">
+                Mushrooms might be the solution. In a statement this summer, NASA announced that it will pour funding into researching how the agency might “grow” homes in space using fungi. The “Mycotecture Off P...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Jan. 31, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-body-of-law.md">
+                Body of Law
+            </a>    
+            </div>
+            <div class="post-preview">
+                Now, a team of psychologists is wondering whether the way that humans value body parts is just as universal. “The Bible’s lex talionis – ‘Eye for eye, tooth for tooth, hand for hand, foot for foot’...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Oct. 4, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-lost-and-found.md">
+                Lost, and Found
+            </a>    
+            </div>
+            <div class="post-preview">
+                It’s not too often, though, that classical music fans get the same opportunity. Last week, however, a crowd gathered outside the Leipzig Opera to hear a piece by the legendary composer, Wolfgang Am...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Nov. 28, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-purrrrmafrosted-prize.md">
+                Purrrrmafrosted Prize
+            </a>    
+            </div>
+            <div class="post-preview">
+                Now, the new discovery of a mummified saber-toothed kitten in Siberia has provided an exceptional first look at what the ancient predator truly looked like. The discovery, detailed in a recent stud...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Jan. 16, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-lead-astray.md">
+                Lead Astray
+            </a>    
+            </div>
+            <div class="post-preview">
+                But new research suggests that widespread pollution in the form of airborne lead was affecting health and lowering IQs during the Roman Empire, according to a new study. “Human or industrial activi...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Nov. 8, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-lost-in-translation.md">
+                Lost in Translation
+            </a>    
+            </div>
+            <div class="post-preview">
+                “You go to some distant mountain or island, and you collect stories,” the academic Ross Perlin says, detailing how these languages have been historically studied, according to the New York Times. B...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Jan. 28, 2025</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-the-secret-life-of-bubbles.md">
+                The Secret Life of Bubbles
+            </a>    
+            </div>
+            <div class="post-preview">
+                Scientists recently have successfully drilled and retrieved a 9,186-foot-long (2,800 meters) ice core sample from Antarctica. The piece, probably the world’s oldest ice at 1.2 million years old, ex...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Oct. 29, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-lines-in-the-desert.md">
+                Lines in the Desert
+            </a>    
+            </div>
+            <div class="post-preview">
+                These giant geoglyphs known as the “Nazca lines” are carved into hillsides and plains to create “negative” images, and date from 200 B.C. to A.D. 500, to a time when the Nazca people inhabited the ...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 13, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-footprints-in-the-sand.md">
+                Footprints in the Sand
+            </a>    
+            </div>
+            <div class="post-preview">
+                Now, scientists, for the first time, because of fossilized footprints made by two distinct species related to humans found on the shore of a Kenyan lake, have been able to say that Homo erectus and...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 31, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-body-language.md">
+                Body Language
+            </a>    
+            </div>
+            <div class="post-preview">
+                Humans use these widespread expressions, or “emotional semantics” to express anatomical connections with certain emotions and feelings, or as researchers say, “embodied emotions.” Now, researchers ...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 20, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-the-wings-of-wisdom.md">
+                The Wings of Wisdom
+            </a>    
+            </div>
+            <div class="post-preview">
+                Meet one of those birds, a Layasan albatross named Wisdom, who at 74 not only still flies, but recently laid another egg. She has been astonishing scientists for decades. “It’s very rare” that Wisd...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Oct. 23, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-a-sailors-tale.md">
+                A Sailor’s Tale
+            </a>    
+            </div>
+            <div class="post-preview">
+                And as it did, an old debate over whether Columbus discovered the Americas, where he is buried and even his origins, came back to life. That’s because of a controversial new study suggesting that h...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 16, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/norse-code.md">
+                ​​Norse Code
+            </a>    
+            </div>
+            <div class="post-preview">
+                It’s been long assumed they hailed genetically from a single group of humans. But a new study shows they are far more diverse than initially thought, according to Phys.Org. New genetic research led...
+              </div>
+          </div>
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col-md-2">
+            <div style="text-align:start; ">
+              <div class="date-tag">Dec. 6, 2024</div>
+              <br>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-10" id="underline_hover">
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/science/post/-a-fish-a-civilization.md">
+                A Fish, a Civilization
+            </a>    
+            </div>
+            <div class="post-preview">
+                “It seems likely that the canals allowed for annual fish harvests and social gatherings, which would have encouraged people to return to this area year after year and congregate for longer periods ...
+              </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+      </div>
+  
+    </body>
+  
+  <!-- BOOTSTRAP JS (match to your CSS version) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+       
+  
