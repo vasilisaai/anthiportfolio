@@ -25,20 +25,27 @@
 </head>
 
 <style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
   .navbar {
     min-height: 50px;
     max-height: 500px;
     padding-left: 30px;
     padding-right: 30px;
     gap: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
 }
-body {
-  font-family: 'Times New Roman', Times, serif;
-}
+
 .navbar-nav {
     gap: 30px;
     font-size: 16px;
+  
   }
   .nav-link {
     color: black !important;
@@ -160,9 +167,9 @@ body.nav-open {
 
 </style>
 
-<body style="height:100%">
+<body>
   
-<nav class="navbar mobile-nav navbar-expand-lg navbar-light">
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
     <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/anthiportfolio/">Anthi</a>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -216,60 +223,103 @@ body.nav-open {
     <div class="contents">
         
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 .navbar-brand {
   font-size: 0px !important;
 }
 
+/* Full-height flex column */
+.page-wrapper {
+  min-height: calc(100dvh - 50px);  /* subtract header height */
+  padding-top: 50px;               /* push content below header */
+  display: flex;
+  flex-direction: column;
+}
+
+/* The main area takes up remaining space */
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+/* Footer row with safe-area padding */
+.name-row {
+  flex: 0 0 auto;
+  margin-top: auto;            /* push it to the bottom */
+}
+
+.name-text {
+  font-size: 100px;            /* desktop */
+  line-height: 0.8;
+  padding: 0;
+  padding-left: 40px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: calc(5px + env(safe-area-inset-bottom));
+  max-height: 200px;
+  flex-shrink: 0;
+}
+
+.name-inner {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* iPhone / small phone screens */
+@media (max-width: 576px) {
   .name-text {
-    font-size: 100px;   /* desktop */
-    line-height: 0.8;
+    font-size: 80px;
+    margin-left: 12px;
+    max-height: 160px;
   }
+}
 
-  /* iPhone / small phone screens */
-  @media (max-width: 576px) {
-    .name-text {
-      font-size: 80px;   /* choose any size */
-      margin-left: 12px;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 a.big-name:hover {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 </style>
 
-<div class="parent" 
-     style="height: 94dvh; display: flex; flex-direction: column; overflow: hidden;">
-  
-     
+<div class="page-wrapper">
+
+  <div class="main-content flex-direction align-items-center">
+      
   
   <!-- IMAGE ROW -->
-  <div class="row" style="flex: 0 1 auto;">
-    <div class="col sm-1"></div>
-
-    <div class="col-sm-12 col-lg-6" style="">
+  <div class="row flex-direction align-items-center justify-content-center">  
+    <div class="col-sm-12 col-lg-6">
       <div id="pictureFrame"
            style="
-             overflow:hidden;
-             cursor:pointer;
-             width:100%;
-             height: 500px;
-             display:flex;
-             margin-top:10%;
-             justify-content:center;
-             align-items:center;">
-        <img src="static/images/Colombia/IMG_7556.JPG" 
-             alt="photo"
-             style="object-fit:contain; width:80%;">
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             overflow: hidden;
+             cursor: pointer;
+           ">
+        <img 
+          src="static/images/Colombia/IMG_7556.JPG"
+          alt="photo"
+          style="
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+          ">
       </div>
     </div>
+  </div>
+  
 
 <script>
     const frame = document.getElementById('pictureFrame');
@@ -369,41 +419,19 @@ a.big-name:hover {
   
   
 
-
-    <div class="col sm-1">
-      <div id="caption" class="caption"
-           style="font-family:'Times New Roman', Times, serif; font-size:0px;">
-      </div>
-    </div>
   </div>
 
-  <div class="row" style="flex: 0 1 auto; margin-top: auto; min-height: 0;">
-    <div class="col name-text"
-         style="
-           padding:0;
-           padding-left: 40px;
-           display:flex;
-           flex-shrink:1;
-           padding-bottom: 5px;
-           max-height: 25vh;
-           align-items:flex-end;
-         ">
-      <div style="
-            font-family:'Times New Roman', Times, serif;
-
-            color:black;
-            white-space:normal;     /* ← allows wrapping instead of overflow */
-            overflow-wrap:break-word;
-          ">
+  <!-- Name row as footer INSIDE .page-wrapper -->
+  <div class="row name-row">
+    <div class="col name-text">
+      <div class="name-inner">
         <a class="big-name" href="/anthiportfolio/">Anthi Likitsakos</a>
       </div>
     </div>
   </div>
-  
+
 </div>
-</div>
-  
-  
+
 
       </div>
   

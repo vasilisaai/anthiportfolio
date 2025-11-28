@@ -25,20 +25,27 @@
 </head>
 
 <style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
   .navbar {
     min-height: 50px;
     max-height: 500px;
     padding-left: 30px;
     padding-right: 30px;
     gap: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
 }
-body {
-  font-family: 'Times New Roman', Times, serif;
-}
+
 .navbar-nav {
     gap: 30px;
     font-size: 16px;
+  
   }
   .nav-link {
     color: black !important;
@@ -160,9 +167,9 @@ body.nav-open {
 
 </style>
 
-<body style="height:100%">
+<body>
   
-<nav class="navbar mobile-nav navbar-expand-lg navbar-light">
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
     <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/anthiportfolio/">Anthi</a>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
