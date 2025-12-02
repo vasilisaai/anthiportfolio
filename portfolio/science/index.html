@@ -22,6 +22,7 @@
      <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+     <link rel="shortcut icon" type="image/png" href="../../static/images/favicon.png">
 </head>
 
 <style>
@@ -30,7 +31,7 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: 'Times New Roman', Times, serif;
-
+  overscroll-behavior-x: none; /* Prevents horizontal overscroll, including swipe back */
 }
 
   .navbar {
@@ -45,7 +46,6 @@ html, body {
 .navbar-nav {
     gap: 30px;
     font-size: 16px;
-  
   }
   .nav-link {
     color: black !important;
@@ -61,7 +61,7 @@ html, body {
   border: none;
 }
 .contents {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 .custom-toggler:focus {
   outline: none;
@@ -170,7 +170,7 @@ body.nav-open {
 <body>
   
 <nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
-    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/anthiportfolio/">Anthi</a>
+    <a class="navbar-brand" style="font-size: 16px; font-style: italic;" href="/anthiportfolio/">Anthi</a>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="toggler-icon"></span>
@@ -185,19 +185,19 @@ body.nav-open {
         </button>
         
         <ul class="navbar-nav mobile-navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item portfolio" id="globalpost">
             <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item projects">
             <a class="nav-link mobile-nav-link" href="">Projects</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item resume">
             <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item photojournalism">
             <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item contact">
             <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
           </li>
         </ul>
@@ -225,6 +225,7 @@ body.nav-open {
 <style>
   body {
     margin: 0;
+    height: fit-content;
   }
 
   .header {
@@ -318,13 +319,13 @@ body.nav-open {
 
     <div id="">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item" id="portfolio">
           <a class="nav-link" style="padding-left: 0 !important;" href="/anthiportfolio/portfolio/globalpost">GlobalPost</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="discoveries">
           <a class="nav-link" href="/anthiportfolio/portfolio/science">Discoveries</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="offline">
           <a class="nav-link" href="">Offline</a>
         </li>
       </ul>
@@ -339,7 +340,14 @@ body.nav-open {
   <h1 class="subheader">Scientific discoveries sourced and written for <span style='font-style:normal'> GlopalPost</span>.</h1>
 
         
-
+<style>
+  .portfolio {
+    font-style: italic !important;;
+  }
+  #discoveries {
+    font-style: italic !important;;
+  }
+</style>
   <div class="container" style="text-align:left; padding:0;">
     <div class="post-feed">
         
@@ -945,10 +953,12 @@ body.nav-open {
       
     </div>
   </div>
+  
 </div>
 
 
 </div>
+
 
       </div>
   

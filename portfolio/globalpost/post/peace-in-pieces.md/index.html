@@ -22,6 +22,7 @@
      <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+     <link rel="shortcut icon" type="image/png" href="../../../../static/images/favicon.png">
 </head>
 
 <style>
@@ -30,7 +31,7 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: 'Times New Roman', Times, serif;
-
+  overscroll-behavior-x: none; /* Prevents horizontal overscroll, including swipe back */
 }
 
   .navbar {
@@ -45,7 +46,6 @@ html, body {
 .navbar-nav {
     gap: 30px;
     font-size: 16px;
-  
   }
   .nav-link {
     color: black !important;
@@ -61,7 +61,7 @@ html, body {
   border: none;
 }
 .contents {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 .custom-toggler:focus {
   outline: none;
@@ -170,7 +170,7 @@ body.nav-open {
 <body>
   
 <nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
-    <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size:20px;" href="/anthiportfolio/">Anthi</a>
+    <a class="navbar-brand" style="font-size: 16px; font-style: italic;" href="/anthiportfolio/">Anthi</a>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="toggler-icon"></span>
@@ -185,19 +185,19 @@ body.nav-open {
         </button>
         
         <ul class="navbar-nav mobile-navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item portfolio" id="globalpost">
             <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item projects">
             <a class="nav-link mobile-nav-link" href="">Projects</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item resume">
             <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item photojournalism">
             <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item contact">
             <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
           </li>
         </ul>
@@ -227,6 +227,10 @@ body.nav-open {
     margin: 0;
   }
 
+  .navbar {
+    position: relative !important;
+    top:0;
+  }
   .post-feed {
     text-align: left;
     font-size: 18px;
@@ -255,10 +259,11 @@ body.nav-open {
 }
 
 .post-title {
-    font-size:70px; 
+    font-size:50px; 
     font-weight: normal;
     font-style: italic;
-    line-height:90px;
+    line-height:50px;
+    padding: 10px 0 10px 0px ;
 }
 
 .post-title a {
@@ -270,18 +275,23 @@ body.nav-open {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .date-tag {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .post-body {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 30px;
+    line-height: 28px;
+}
+.post-body::first-letter {
+          font-size: 3em; /* Makes the first letter 3 times the size of the base font */
+        font-weight: bold; /* Example font weight */
 }
 
 .post-body p {
@@ -292,27 +302,44 @@ body.nav-open {
     text-decoration: underline;
     color: black;
 }
+
+footer {
+  text-align: center;
+  font-size: 15px;
+}
+
+ footer a {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+  color: black !important;
+}
+footer a:hover {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+
+}
 </style>
 
 <div class="container" style="text-align:left;">
   <div class="row display-flex justify-content-center">
     <!-- LEFT COLUMN: country + date -->
-    <div class="col-7">
+    <div class="col-sm-12 col-md-8">
       <br>
       <br>
+
   <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
 
     <div id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" style="padding-left: 0 !important; font-weight: bold; " href="/anthiportfolio/portfolio/globalpost">GlobalPost</a>
+          <a class="nav-link" style="padding-left: 0 !important; font-style: italic; " href="/anthiportfolio/portfolio/GlobalPost">GlobalPost</a>
         </li>
       </ul>
   </nav>
   <hr style="background-color:#000; border-width:1px; margin:0;">
   <hr style="background-color:#000; border-width:1px; margin-top:2px;">
-
-  <div class="country-tag" style="line-height: 30px;">COLOMBIA</div>
+  <br>
+  <div class="country-tag">COLOMBIA</div>
 
   <h1 class="post-title"> Peace in Pieces</h1>
 
@@ -324,6 +351,7 @@ body.nav-open {
     <div class="post-feed">
         <hr style="background-color:#000; border-width:1px; margin:0;">
 
+      <br>
       <br>
       
         <div class="row post">
@@ -365,6 +393,12 @@ body.nav-open {
         </div>
     </div>
   </div>
+  <footer>
+    <hr style="background-color:#000; border-width:1px; margin: 40px 0 40px 0">
+
+    <a href="/anthiportfolio/">ANTHI LIKITSAKOS</a>
+    <div>2025</div>
+  </footer>
 </div>
 
 

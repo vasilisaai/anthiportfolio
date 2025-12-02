@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+     <!-- BOOTSTRAP CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="../../../../static/main.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+     <link rel="shortcut icon" type="image/png" href="../../../../static/images/favicon.png">
+</head>
+
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  overscroll-behavior-x: none; /* Prevents horizontal overscroll, including swipe back */
+}
+
+  .navbar {
+    min-height: 50px;
+    max-height: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 30px;
+    background-color: white;
+}
+
+.navbar-nav {
+    gap: 30px;
+    font-size: 16px;
+  }
+  .nav-link {
+    color: black !important;
+  }
+.navbar .nav-link:hover .nav-link.active {
+  color: rgb(0, 0, 0) !important;
+}
+.text-center {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.custom-toggler {
+  border: none;
+}
+.contents {
+  font-family: 'Times New Roman', Times, serif;
+}
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.toggler-icon {
+  display: block;
+  width: 25px;
+  height: .5px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+.mobile-close {
+  height: 0px;
+  background: none;
+  border: none;
+}
+/* FULL-SCREEN MOBILE NAV */
+@media (max-width: 991.98px) {
+
+.mobile-nav {
+  position: relative;
+  z-index: 1050;
+}
+
+.mobile-navbar-collapse {
+  position: fixed;
+  display: flex;
+  align-items: center;        /* vertical center */
+   justify-content: center;    /* horizontal center */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+  transform: translateY(-100%);
+}
+
+.mobile-navbar-collapse.show {
+  transform: translateY(0);
+}
+
+.mobile-navbar-nav {
+    width: 60%;
+    max-width: 900px;
+    align-items: flex-start;   /* LEFT align text */
+    text-align: left;
+    padding-left: 0px;
+}
+
+.mobile-nav-link {
+  font-size: 22px;
+  width: 100%;
+}
+
+/* Lock body scroll when menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.close-line {
+  width: 20px;
+  height: 0.5px;
+  background: black;
+  display: block;
+}
+
+/* Rotate into an "X" */
+.mobile-close .close-line:first-child {
+  transform: rotate(40deg) translate(3px, 3px);
+}
+
+.mobile-close .close-line:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.mobile-close:focus {
+  outline: none;
+}
+
+}
+
+</style>
+
+<body>
+  
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
+    <a class="navbar-brand" style="font-size: 16px; font-style: italic;" href="/anthiportfolio/">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarNav">
+        <button class="mobile-close" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+        
+        <ul class="navbar-nav mobile-navbar-nav ml-auto">
+          <li class="nav-item portfolio" id="globalpost">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item projects">
+            <a class="nav-link mobile-nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item resume">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
+          </li>
+          <li class="nav-item photojournalism">
+            <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item contact">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+
+  <script>
+    $('#navbarNav').on('shown.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+  
+    $('#navbarNav').on('hidden.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
+  </script>
+
+
+  <body>
+    <div class="contents">
+        
+<style>
+  body {
+    margin: 0;
+  }
+
+  .navbar {
+    position: relative !important;
+    top:0;
+  }
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:50px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:50px;
+    padding: 10px 0 10px 0px ;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.post-body {
+    font-size: 20px;
+    line-height: 30px;
+    line-height: 28px;
+}
+.post-body::first-letter {
+          font-size: 3em; /* Makes the first letter 3 times the size of the base font */
+        font-weight: bold; /* Example font weight */
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+}
+
+ footer a {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+  color: black !important;
+}
+footer a:hover {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+
+}
+</style>
+
+<div class="container" style="text-align:left;">
+  <div class="row display-flex justify-content-center">
+    <!-- LEFT COLUMN: country + date -->
+    <div class="col-sm-12 col-md-8">
+      <br>
+      <br>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+
+    <div id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-style: italic; " href="/anthiportfolio/portfolio/Discoveries">Discoveries</a>
+        </li>
+      </ul>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+  <br>
+  <div class="country-tag"></div>
+
+  <h1 class="post-title"> Lost in Evaporation</h1>
+
+  <div class="date-tag">Dec. 17, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>For years, scientists were puzzled by how such an event could have occurred.</p>
+<p>But now, a new <a href="https://post.spmailtechnol.com/f/a/QVg4-bY8iZt8qNH6aEUGLw~~/AASU4wA~/RgRpQ9xmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvajdiNTluMHdsNS8_bGhfYWlkPTExNDUwJmxoX2NpZD11OGdmd2VvZ3NvVwNzcGNCCmdVZldhZ3RQVVZSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">study</a> published in Nature Communications has provided new insights into the evaporation process, <a href="https://post.spmailtechnol.com/f/a/AbhxutL-UQJkdAY04icXAA~~/AASU4wA~/RgRpQ9xmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvMmhrdXhmOTU3Zy8_bGhfYWlkPTExNDUwJmxoX2NpZD11OGdmd2VvZ3NvVwNzcGNCCmdVZldhZ3RQVVZSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a> to Science Alert.</p>
+<p>The international team of scientists found that the extreme evaporation event happened in two phases, and were also able to chart when, where, and how 70 percent of the Mediterranean’s water was lost, by analyzing chlorine isotypes in the salt deposited in the seabed and building numerical models and simulations.</p>
+<p>The first phase came after 35,000 years of restricted water flow between the Atlantic Ocean and the sea, in the area now known as the Strait of Gibraltar. The seawater wasn’t being replenished with fresh water from the Atlantic, which led to the deposit of salt and sped up water evaporation in the Mediterranean.</p>
+<p>In the following 10,000 years, namely the second phase, the Mediterranean was completely isolated, further accelerating the evaporation process. The researchers found that in some areas, water levels dropped as much as 1.3 miles.</p>
+<p>The team suggested that as the water receded during phase two, the underwater ridge across the Strait of Sicily would have been exposed, splitting the Mediterranean Sea in two and forming a land bridge connecting Africa to Europe. This then led to faster rates of evaporation and more salt deposits in the eastern Mediterranean due to the restriction of the flow of water, furthering the problem.</p>
+<p>While the exact reasons behind why the Mediterranean became isolated are still unknown, the researchers have acknowledged that the late Miocene era was marked by significant tectonic activity. The MSC itself probably correlated with greater upheaval, with pressure lifted on the surface crust and the surrounding areas drying out.</p>
+<p>“The huge size of the Mediterranean depression created by MSC water level drawdown – corresponding to a volume loss of 69 percent of the Mediterranean water body – would have generated planetary-scale climate effects, inducing changes in precipitation patterns, a scenario suggested by rainfall proxy data,” said the authors in the paper.</p>
+<p>Meanwhile, the Zanclean megaflood filled the Mediterranean some 5.3 million years ago via the Strait and reversed the impact of the MSC, <a href="https://post.spmailtechnol.com/f/a/W2ggyeUErVnRxbe2CBDQfw~~/AASU4wA~/RgRpQ9xmP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvdnEzM3g0dzczMC8_bGhfYWlkPTExNDUwJmxoX2NpZD11OGdmd2VvZ3NvVwNzcGNCCmdVZldhZ3RQVVZSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">according</a> to a paper published in Earth-Science Reviews. Still, the researchers of this new study maintain that their findings on the MSC “have broader implications for the biological, geologic and climatic evolution of the Mediterranean realm, and beyond.”</p>
+<p>Regardless, the Strait of Gibraltar is nowadays much wider and deeper than it was in phase 1 of the MSC, allowing the continuous inflow of Atlantic Ocean water to replenish the Mediterranean. If it wasn’t for this connection, it is estimated that the sea level would gradually shrink, dropping nearly 20 inches every year, making it smaller and saltier.</p></div>
+        </div>
+    </div>
+  </div>
+  <footer>
+    <hr style="background-color:#000; border-width:1px; margin: 40px 0 40px 0">
+
+    <a href="/anthiportfolio/">ANTHI LIKITSAKOS</a>
+    <div>2025</div>
+  </footer>
+</div>
+
+
+      </div>
+  
+    </body>
+  
+  <!-- BOOTSTRAP JS (match to your CSS version) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+       
+  

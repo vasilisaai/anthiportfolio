@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+     <!-- BOOTSTRAP CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="../../../../static/main.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+     <link rel="shortcut icon" type="image/png" href="../../../../static/images/favicon.png">
+</head>
+
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  overscroll-behavior-x: none; /* Prevents horizontal overscroll, including swipe back */
+}
+
+  .navbar {
+    min-height: 50px;
+    max-height: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 30px;
+    background-color: white;
+}
+
+.navbar-nav {
+    gap: 30px;
+    font-size: 16px;
+  }
+  .nav-link {
+    color: black !important;
+  }
+.navbar .nav-link:hover .nav-link.active {
+  color: rgb(0, 0, 0) !important;
+}
+.text-center {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.custom-toggler {
+  border: none;
+}
+.contents {
+  font-family: 'Times New Roman', Times, serif;
+}
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.toggler-icon {
+  display: block;
+  width: 25px;
+  height: .5px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+.mobile-close {
+  height: 0px;
+  background: none;
+  border: none;
+}
+/* FULL-SCREEN MOBILE NAV */
+@media (max-width: 991.98px) {
+
+.mobile-nav {
+  position: relative;
+  z-index: 1050;
+}
+
+.mobile-navbar-collapse {
+  position: fixed;
+  display: flex;
+  align-items: center;        /* vertical center */
+   justify-content: center;    /* horizontal center */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+  transform: translateY(-100%);
+}
+
+.mobile-navbar-collapse.show {
+  transform: translateY(0);
+}
+
+.mobile-navbar-nav {
+    width: 60%;
+    max-width: 900px;
+    align-items: flex-start;   /* LEFT align text */
+    text-align: left;
+    padding-left: 0px;
+}
+
+.mobile-nav-link {
+  font-size: 22px;
+  width: 100%;
+}
+
+/* Lock body scroll when menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.close-line {
+  width: 20px;
+  height: 0.5px;
+  background: black;
+  display: block;
+}
+
+/* Rotate into an "X" */
+.mobile-close .close-line:first-child {
+  transform: rotate(40deg) translate(3px, 3px);
+}
+
+.mobile-close .close-line:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.mobile-close:focus {
+  outline: none;
+}
+
+}
+
+</style>
+
+<body>
+  
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
+    <a class="navbar-brand" style="font-size: 16px; font-style: italic;" href="/anthiportfolio/">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarNav">
+        <button class="mobile-close" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+        
+        <ul class="navbar-nav mobile-navbar-nav ml-auto">
+          <li class="nav-item portfolio" id="globalpost">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item projects">
+            <a class="nav-link mobile-nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item resume">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
+          </li>
+          <li class="nav-item photojournalism">
+            <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item contact">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+
+  <script>
+    $('#navbarNav').on('shown.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+  
+    $('#navbarNav').on('hidden.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
+  </script>
+
+
+  <body>
+    <div class="contents">
+        
+<style>
+  body {
+    margin: 0;
+  }
+
+  .navbar {
+    position: relative !important;
+    top:0;
+  }
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:50px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:50px;
+    padding: 10px 0 10px 0px ;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.post-body {
+    font-size: 20px;
+    line-height: 30px;
+    line-height: 28px;
+}
+.post-body::first-letter {
+          font-size: 3em; /* Makes the first letter 3 times the size of the base font */
+        font-weight: bold; /* Example font weight */
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+}
+
+ footer a {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+  color: black !important;
+}
+footer a:hover {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+
+}
+</style>
+
+<div class="container" style="text-align:left;">
+  <div class="row display-flex justify-content-center">
+    <!-- LEFT COLUMN: country + date -->
+    <div class="col-sm-12 col-md-8">
+      <br>
+      <br>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+
+    <div id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-style: italic; " href="/anthiportfolio/portfolio/Discoveries">Discoveries</a>
+        </li>
+      </ul>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+  <br>
+  <div class="country-tag"></div>
+
+  <h1 class="post-title"> Lost, and Found</h1>
+
+  <div class="date-tag">Oct. 4, 2024</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      <br>
+      
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>It’s not too often, though, that classical music fans get the same opportunity.</p>
+<p>Last week, however, a crowd gathered outside the Leipzig Opera to hear a piece by the legendary composer, Wolfgang Amadeus Mozart, that was recently discovered in the Leipzig Municipal Library in Germany.</p>
+<p>“Mozart dropped a new single,” <a href="https://post.spmailtechnol.com/f/a/5w7H4gT39Hm7qWshTEELdg~~/AASU4wA~/RgRo4j9VP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvYXlsdmFnYmJvZS8_bGhfYWlkPTExNDUwJmxoX2NpZD15N3B3bjl6OXN3VwNzcGNCCmb3V7r_ZlELeERSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">wrote</a> one listener on YouTube. “It’s an honor to be one of the first humans to hear this song in hundreds of years,” said another.</p>
+<p>The 12-minute piece, “Serenade in C,” was believed to be composed by Mozart in the mid to late 1760s for a string trio and has seven movements. It’s now been renamed, “Ganz kleine Nachtmusik.”</p>
+<p>Its first modern performance took place in the Austrian city of Salzburg – where Mozart was born in 1756 – late last September, Sky News <a href="https://post.spmailtechnol.com/f/a/0KSpA7vHYvLLfWszOSxW4w~~/AASU4wA~/RgRo4j9VP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvd2dkbWc4N2tjaS8_bGhfYWlkPTExNDUwJmxoX2NpZD15N3B3bjl6OXN3VwNzcGNCCmb3V7r_ZlELeERSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">reported</a>.</p>
+<p>Researchers discovered the manuscript in the Leipzig Music Library while compiling the latest edition of the Köchel catalog, Mozart’s musical works archive, ClassicFM <a href="https://post.spmailtechnol.com/f/a/z0yt9pwy2Uo_HINlcKUybA~~/AASU4wA~/RgRo4j9VP0RCaHR0cHM6Ly9hLnBvc3QubGhkLmxpbmsvdDd1ZXZ4ZWZ6ZC8_bGhfYWlkPTExNDUwJmxoX2NpZD15N3B3bjl6OXN3VwNzcGNCCmb3V7r_ZlELeERSGmFudGhpLmxpa2l0c2Frb3NAZ21haWwuY29tWAQAAABa">wrote</a>. The manuscript is unsigned by Mozart, and believed to be a copy made around 1780.</p>
+<p>Mozart is considered one of the greatest composers in history. A child prodigy, he began creating scores at the age of five, composing more than 800 works before his death aged just 35.</p>
+<p>The newly discovered piece is said to have been composed when Mozart was somewhere between 10 and 13 years old, based on the compositional characteristics of Mozart’s early work.</p></div>
+        </div>
+    </div>
+  </div>
+  <footer>
+    <hr style="background-color:#000; border-width:1px; margin: 40px 0 40px 0">
+
+    <a href="/anthiportfolio/">ANTHI LIKITSAKOS</a>
+    <div>2025</div>
+  </footer>
+</div>
+
+
+      </div>
+  
+    </body>
+  
+  <!-- BOOTSTRAP JS (match to your CSS version) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+       
+  
