@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+     <!-- BOOTSTRAP CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="../../../../static/main.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+     <link rel="shortcut icon" type="image/png" href="../../../../static/images/favicon.png">
+</head>
+
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  overscroll-behavior-x: none; /* Prevents horizontal overscroll, including swipe back */
+}
+
+  .navbar {
+    min-height: 50px;
+    max-height: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 30px;
+    background-color: white;
+}
+
+.navbar-nav {
+    gap: 30px;
+    font-size: 16px;
+  }
+  .nav-link {
+    color: black !important;
+  }
+.navbar .nav-link:hover .nav-link.active {
+  color: rgb(0, 0, 0) !important;
+}
+.text-center {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.custom-toggler {
+  border: none;
+}
+.contents {
+  font-family: 'Times New Roman', Times, serif;
+}
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.toggler-icon {
+  display: block;
+  width: 25px;
+  height: .5px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+.mobile-close {
+  height: 0px;
+  background: none;
+  border: none;
+}
+/* FULL-SCREEN MOBILE NAV */
+@media (max-width: 991.98px) {
+
+.mobile-nav {
+  position: relative;
+  z-index: 1050;
+}
+
+.mobile-navbar-collapse {
+  position: fixed;
+  display: flex;
+  align-items: center;        /* vertical center */
+   justify-content: center;    /* horizontal center */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+  transform: translateY(-100%);
+}
+
+.mobile-navbar-collapse.show {
+  transform: translateY(0);
+}
+
+.mobile-navbar-nav {
+    width: 60%;
+    max-width: 900px;
+    align-items: flex-start;   /* LEFT align text */
+    text-align: left;
+    padding-left: 0px;
+}
+
+.mobile-nav-link {
+  font-size: 22px;
+  width: 100%;
+}
+
+/* Lock body scroll when menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.close-line {
+  width: 20px;
+  height: 0.5px;
+  background: black;
+  display: block;
+}
+
+/* Rotate into an "X" */
+.mobile-close .close-line:first-child {
+  transform: rotate(40deg) translate(3px, 3px);
+}
+
+.mobile-close .close-line:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.mobile-close:focus {
+  outline: none;
+}
+
+}
+
+</style>
+
+<body>
+  
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
+    <a class="navbar-brand" style="font-size: 16px; font-style: italic;" href="/anthiportfolio/">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarNav">
+        <button class="mobile-close" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+        
+        <ul class="navbar-nav mobile-navbar-nav ml-auto">
+          <li class="nav-item portfolio" id="globalpost">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item projects">
+            <a class="nav-link mobile-nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item resume">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
+          </li>
+          <li class="nav-item photojournalism">
+            <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item contact">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+
+  <script>
+    $('#navbarNav').on('shown.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+  
+    $('#navbarNav').on('hidden.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
+  </script>
+
+
+  <body>
+    <div class="contents">
+        
+<style>
+  body {
+    margin: 0;
+  }
+
+  .navbar {
+    position: relative !important;
+    top:0;
+  }
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:50px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:50px;
+    padding: 10px 0 10px 0px ;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.post-body {
+    font-size: 20px;
+    line-height: 30px;
+    line-height: 28px;
+}
+.post-body::first-letter {
+          font-size: 3em; /* Makes the first letter 3 times the size of the base font */
+        font-weight: bold; /* Example font weight */
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+}
+
+ footer a {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+  color: black !important;
+}
+footer a:hover {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+
+}
+</style>
+
+<div class="container" style="text-align:left;">
+  <div class="row display-flex justify-content-center">
+    <!-- LEFT COLUMN: country + date -->
+    <div class="col-sm-12 col-md-8">
+      <br>
+      <br>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+
+    <div id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-style: italic; " href="/anthiportfolio/portfolio/Offline">Offline</a>
+        </li>
+      </ul>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+  <br>
+  
+  <div class="country-tag"></div>
+
+  <h1 class="post-title"> Third Place St. Augustine</h1>
+
+  <div class="date-tag">Nov. 13, 2025</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      <br>
+      
+      <div class="row display-flex justify-content-center align-items-center">
+      <div class="col-sm-8">
+        <div class="featured-img">
+          <img
+          src="../../../../static/images/offline/third-place.jpg"
+          alt="photo">
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>In our newsletters, we’ve often highlighted communities in bigger cities. This week, we talked with Third Place in St. Augustine, Florida, about their community in their small but vibrant city.</p>
+<p>Third Place St. Augustine is proof that people everywhere are craving spaces to connect offline — even in towns where you might already recognize half the faces on your way to work or the grocery store.</p>
+<p>Founded just this summer, Third Place STA was born out of founder Sara Upchurch’s frustration with national politics and her desire to channel that energy into something closer to home — strengthening local connections, supporting small businesses, helping people discover new interests and become civically engaged.</p>
+<p><strong>Q &amp; A with Third Place STA</strong></p>
+<p><strong>Q: How was third place founded and why?</strong></p>
+<p>Third Place STA was founded by Sara Upchurch in August 2025. It’s one of very few ideas that actually made it out of the group chat! Sara was feeling frustrated with politics nationally and wanted to refocus that fire and energy into connecting her local community to one another, and supporting local businesses.</p>
+<p><strong>Q:You ask community members to help volunteer and host events. How does that process work, what are the benefits, and how do you offer support for those events?</strong></p>
+<p>Anyone in the community is allowed to volunteer to host local events. They can either organize a meetup (gathering a group to attend an event that’s already happening somewhere) or an event (a grassroots gathering put on by the host themselves). An example of a meetup is getting folks together to go to a local concert. An example of an event is organizing a group walk on the beach. The host just has to either DM us with their idea, or post a bare-bones event on our Heylo group, and we take it from there in terms of graphics and promotion, free of charge.</p>
+<p><strong>Q: What have been some of your favorite events you’ve held and what made them so successful to you?</strong></p>
+<p>Our recent clothing swap event was a ton of fun (I personally left with some new favorite wardrobe pieces!) and attending a photography walk meetup was a great way to see our town in a new light and flex a skill muscle that was getting pretty rusty. The only meetups we consider flops are those that 1) get cancelled for weather, or 2) no one shows up but the host (which is rare!)</p>
+<p><strong>Q: What role do community partnerships and local businesses play in your events?</strong></p>
+<p>Community partnerships and local businesses are everything for us. Our town is small but funky and there’s always something fun happening at local parks, beaches, bars, restaurants, shops, cafes, etc. There are also a ton of great local special interest groups, like West Augustine Wheelers (casual bike riding group), Hatch Creatives (female creatives and entrepreneurs), and Sober St. Augustine (hosting events and gatherings that are intentionally booze-free). Without these local partnerships and businesses, Third Place STA would not exist!</p>
+<p><strong>Q: What kind of long-term impact do you hope Third Place has on the St. Augustine community?</strong></p>
+<p>Long-term, I hope Third Place STA allows those who feel lost to find their place here, allows folks to discover new interests, allows participants to make new connections, and allows all of us to support the local economy and be civically engaged.</p>
+<p>Volunteer hosts for Third Place STA have multiple events coming up in November and December for diverse interests such a WFH event, Trivia nights, New Year Goals &amp; Vision board event, all at participating local businesses. Follow their instagram @thirdplacesta, for more info on their offerings and how you can get involved!</p></div>
+        </div>
+    </div>
+  </div>
+  <footer>
+    <hr style="background-color:#000; border-width:1px; margin: 40px 0 40px 0">
+
+    <a href="/anthiportfolio/">ANTHI LIKITSAKOS</a>
+    <div>2025</div>
+  </footer>
+</div>
+
+
+      </div>
+  
+    </body>
+  
+  <!-- BOOTSTRAP JS (match to your CSS version) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+       
+  

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+     <!-- BOOTSTRAP CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="../../static/main.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+     <link rel="shortcut icon" type="image/png" href="../../static/images/favicon.png">
+</head>
+
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  overscroll-behavior-x: none; /* Prevents horizontal overscroll, including swipe back */
+}
+
+  .navbar {
+    min-height: 50px;
+    max-height: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 30px;
+    background-color: white;
+}
+
+.navbar-nav {
+    gap: 30px;
+    font-size: 16px;
+  }
+  .nav-link {
+    color: black !important;
+  }
+.navbar .nav-link:hover .nav-link.active {
+  color: rgb(0, 0, 0) !important;
+}
+.text-center {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.custom-toggler {
+  border: none;
+}
+.contents {
+  font-family: 'Times New Roman', Times, serif;
+}
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.toggler-icon {
+  display: block;
+  width: 25px;
+  height: .5px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+.mobile-close {
+  height: 0px;
+  background: none;
+  border: none;
+}
+/* FULL-SCREEN MOBILE NAV */
+@media (max-width: 991.98px) {
+
+.mobile-nav {
+  position: relative;
+  z-index: 1050;
+}
+
+.mobile-navbar-collapse {
+  position: fixed;
+  display: flex;
+  align-items: center;        /* vertical center */
+   justify-content: center;    /* horizontal center */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+  transform: translateY(-100%);
+}
+
+.mobile-navbar-collapse.show {
+  transform: translateY(0);
+}
+
+.mobile-navbar-nav {
+    width: 60%;
+    max-width: 900px;
+    align-items: flex-start;   /* LEFT align text */
+    text-align: left;
+    padding-left: 0px;
+}
+
+.mobile-nav-link {
+  font-size: 22px;
+  width: 100%;
+}
+
+/* Lock body scroll when menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.close-line {
+  width: 20px;
+  height: 0.5px;
+  background: black;
+  display: block;
+}
+
+/* Rotate into an "X" */
+.mobile-close .close-line:first-child {
+  transform: rotate(40deg) translate(3px, 3px);
+}
+
+.mobile-close .close-line:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.mobile-close:focus {
+  outline: none;
+}
+
+}
+
+</style>
+
+<body>
+  
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
+    <a class="navbar-brand" style="font-size: 16px; font-style: italic;" href="/anthiportfolio/">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarNav">
+        <button class="mobile-close" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+        
+        <ul class="navbar-nav mobile-navbar-nav ml-auto">
+          <li class="nav-item portfolio" id="globalpost">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item projects">
+            <a class="nav-link mobile-nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item resume">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
+          </li>
+          <li class="nav-item photojournalism">
+            <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item contact">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+
+  <script>
+    $('#navbarNav').on('shown.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+  
+    $('#navbarNav').on('hidden.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
+  </script>
+
+
+  <body>
+    <div class="contents">
+        
+<style>
+  body {
+    margin: 0;
+    height: fit-content;
+  }
+
+  .header {
+    font-size:65px;
+    font-weight: bold;
+    line-height:60px;
+    padding: 40px 0  20px 0;
+  }
+
+  .subheader {
+    font-style: italic;
+    font-size: 22px;
+    line-height: 28px;
+    padding: 0px  0 40px 0;
+  }
+
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 0px 0;
+    
+  }
+
+  .post {
+  padding: 10px 0;
+  align-items: flex-start;
+}
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.2em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+  font-size: 15px;
+}
+
+.post-title {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top: 12px;   /* adjust 2–6px until it feels perfect */
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 2;
+    position: relative;
+    top: 10px;   /* adjust 2–6px until it feels perfect */
+}
+
+  /* iPhone / small phone screens */
+  @media (max-width: 576px) {
+    .header {
+      font-size: 40px;   /* choose any size */
+    }
+  }
+
+</style>
+
+
+<div class="container" style="text-align:left;">
+  <div class="row display-flex justify-content-center">
+    <!-- LEFT COLUMN: country + date -->
+    <div class="col-sm-12 col-md-8">
+      <br>
+      <br>
+
+  <nav class="navbar navbar-expand navbar-light" style="padding-left:0;min-height: 40px">
+
+    <div id="">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" id="globalpost">
+          <a class="nav-link" style="padding-left: 0 !important;" href="/anthiportfolio/portfolio/globalpost">GlobalPost</a>
+        </li>
+        <li class="nav-item" id="discoveries">
+          <a class="nav-link" href="/anthiportfolio/portfolio/science">Discoveries</a>
+        </li>
+        <li class="nav-item" id="offline">
+          <a class="nav-link" href="/anthiportfolio/portfolio/offline">Offline</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <hr style="background-color:#000; border-width:0.5px; margin:0;">
+  <hr style="background-color:#000; border-width:0.5px; margin-top:2px;">
+
+  <h1 class="header">Offline</h1>
+  <h1 class="subheader">Interviews with local grassroots communities for DCMX's new project that aims to highlight community makers.</h1>
+
+        
+<style>
+  .portfolio {
+    font-style: italic !important;;
+  }
+  #offline {
+    font-style: italic !important;;
+  }
+  .post {
+  padding: 0 25px 0 0  !important;
+  align-items: flex-start;
+}
+  .date-tag {
+    padding-bottom: 10px;
+  }
+  
+  .thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 aspect ratio */
+    overflow: hidden;
+  }
+
+  .thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop to fill the square */
+  }
+</style>
+</style>
+  <div class="container" style="text-align:left; padding:0;">
+    <div class="post-feed">
+        
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-9" id="underline_hover">
+            <div class="date-tag">Oct. 23, 2025</div>
+
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/offline/post/met-through-friends.md">
+                Met Through Friends
+            </a>    
+            </div>
+            <div class="post-preview">
+                Three years ago, Elle Wilson had an idea for a party in her 700-square-foot apartment in NYC. The party had two criteria for its guest list: 1. The guests all had to be single. 2. Each guest was re...
+              </div>
+          </div>
+          <div class="col-md-3 px-0">
+            <div class="thumbnail">
+              <img
+              src="../../static/images/offline/met-through-friends.jpg"
+              alt="photo">
+            </div>
+          </div>
+          
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-9" id="underline_hover">
+            <div class="date-tag">Nov. 13, 2025</div>
+
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/offline/post/third-place.md">
+                Third Place St. Augustine
+            </a>    
+            </div>
+            <div class="post-preview">
+                In our newsletters, we’ve often highlighted communities in bigger cities. This week, we talked with Third Place in St. Augustine, Florida, about their community in their small but vibrant city. Thi...
+              </div>
+          </div>
+          <div class="col-md-3 px-0">
+            <div class="thumbnail">
+              <img
+              src="../../static/images/offline/third-place.jpg"
+              alt="photo">
+            </div>
+          </div>
+          
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-9" id="underline_hover">
+            <div class="date-tag">Oct. 16, 2025</div>
+
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/offline/post/RKL.md">
+                Recess Kickball League (RKL)
+            </a>    
+            </div>
+            <div class="post-preview">
+                At the heart of the pandemic, five friends organized a kickball game in Brooklyn in an effort to find a safe and fun way to connect with others during the times of social distancing and uncertainty...
+              </div>
+          </div>
+          <div class="col-md-3 px-0">
+            <div class="thumbnail">
+              <img
+              src="../../static/images/offline/RKL.jpg"
+              alt="photo">
+            </div>
+          </div>
+          
+        </div>
+      
+        <hr style="background-color:#000; border-width: 0.5px;">
+
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+
+          <!-- RIGHT COLUMN: title + preview -->
+          <div class="col-md-9" id="underline_hover">
+            <div class="date-tag">Oct. 8, 2025</div>
+
+            <div class="post-title">
+              <a href="https://vasilisaai.github.io/anthiportfolio/portfolio/offline/post/far-near.md">
+                FAR-NEAR
+            </a>    
+            </div>
+            <div class="post-preview">
+                FAR-NEAR is a print series-turned community showing yet another signal of a cultural shift offline. Founded in 2017 by Lulu Yao Gioiello, FAR–NEAR began as a print series dedicated to broadening pe...
+              </div>
+          </div>
+          <div class="col-md-3 px-0">
+            <div class="thumbnail">
+              <img
+              src="../../static/images/offline/far-near.jpg"
+              alt="photo">
+            </div>
+          </div>
+          
+        </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+</div>
+
+
+      </div>
+  
+    </body>
+  
+  <!-- BOOTSTRAP JS (match to your CSS version) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+       
+  

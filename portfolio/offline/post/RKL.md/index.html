@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+     <!-- JQUERY -->
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+     <!-- BOOTSTRAP CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="../../../../static/main.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Pinyon+Script&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
+     <link rel="shortcut icon" type="image/png" href="../../../../static/images/favicon.png">
+</head>
+
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  overscroll-behavior-x: none; /* Prevents horizontal overscroll, including swipe back */
+}
+
+  .navbar {
+    min-height: 50px;
+    max-height: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 30px;
+    background-color: white;
+}
+
+.navbar-nav {
+    gap: 30px;
+    font-size: 16px;
+  }
+  .nav-link {
+    color: black !important;
+  }
+.navbar .nav-link:hover .nav-link.active {
+  color: rgb(0, 0, 0) !important;
+}
+.text-center {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.custom-toggler {
+  border: none;
+}
+.contents {
+  font-family: 'Times New Roman', Times, serif;
+}
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.toggler-icon {
+  display: block;
+  width: 25px;
+  height: .5px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+.mobile-close {
+  height: 0px;
+  background: none;
+  border: none;
+}
+/* FULL-SCREEN MOBILE NAV */
+@media (max-width: 991.98px) {
+
+.mobile-nav {
+  position: relative;
+  z-index: 1050;
+}
+
+.mobile-navbar-collapse {
+  position: fixed;
+  display: flex;
+  align-items: center;        /* vertical center */
+   justify-content: center;    /* horizontal center */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+  transform: translateY(-100%);
+}
+
+.mobile-navbar-collapse.show {
+  transform: translateY(0);
+}
+
+.mobile-navbar-nav {
+    width: 60%;
+    max-width: 900px;
+    align-items: flex-start;   /* LEFT align text */
+    text-align: left;
+    padding-left: 0px;
+}
+
+.mobile-nav-link {
+  font-size: 22px;
+  width: 100%;
+}
+
+/* Lock body scroll when menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.close-line {
+  width: 20px;
+  height: 0.5px;
+  background: black;
+  display: block;
+}
+
+/* Rotate into an "X" */
+.mobile-close .close-line:first-child {
+  transform: rotate(40deg) translate(3px, 3px);
+}
+
+.mobile-close .close-line:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.mobile-close:focus {
+  outline: none;
+}
+
+}
+
+</style>
+
+<body>
+  
+<nav class="navbar mobile-nav navbar-expand-lg navbar-light" style="position: sticky; top: 0; z-index: 200">
+    <a class="navbar-brand" style="font-size: 16px; font-style: italic;" href="/anthiportfolio/">Anthi</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarNav">
+        <button class="mobile-close" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+        
+        <ul class="navbar-nav mobile-navbar-nav ml-auto">
+          <li class="nav-item portfolio" id="globalpost">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/portfolio/globalpost">Writing</a>
+          </li>
+          <li class="nav-item projects">
+            <a class="nav-link mobile-nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item resume">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/resume/">Resume</a>
+          </li>
+          <li class="nav-item photojournalism">
+            <a class="nav-link mobile-nav-link" href="">Photojournalism</a>
+          </li>
+          <li class="nav-item contact">
+            <a class="nav-link mobile-nav-link" href="/anthiportfolio/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+
+  <script>
+    $('#navbarNav').on('shown.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+  
+    $('#navbarNav').on('hidden.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
+  </script>
+
+
+  <body>
+    <div class="contents">
+        
+<style>
+  body {
+    margin: 0;
+  }
+
+  .navbar {
+    position: relative !important;
+    top:0;
+  }
+  .post-feed {
+    text-align: left;
+    font-size: 18px;
+    padding: 30px 0;
+    
+  }
+
+  .post {
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .featured-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .post-preview {
+  overflow: hidden;
+  max-height: 3.6em;       /* ~2 lines */
+  line-height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-title {
+    font-size:50px; 
+    font-weight: normal;
+    font-style: italic;
+    line-height:50px;
+    padding: 10px 0 10px 0px ;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.country-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.date-tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.post-body {
+    font-size: 20px;
+    line-height: 30px;
+    line-height: 28px;
+}
+.post-body::first-letter {
+          font-size: 3em; /* Makes the first letter 3 times the size of the base font */
+        font-weight: bold; /* Example font weight */
+}
+
+.post-body p {
+  margin-bottom: 1.5em;
+}
+
+.post-body a {
+    text-decoration: underline;
+    color: black;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+}
+
+ footer a {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+  color: black !important;
+}
+footer a:hover {
+  text-decoration: underline 0.5px;
+  text-underline-offset: 4px;
+
+}
+</style>
+
+<div class="container" style="text-align:left;">
+  <div class="row display-flex justify-content-center">
+    <!-- LEFT COLUMN: country + date -->
+    <div class="col-sm-12 col-md-8">
+      <br>
+      <br>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0px; padding-left:0;height: 40px;">
+
+    <div id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 0 !important; font-style: italic; " href="/anthiportfolio/portfolio/Offline">Offline</a>
+        </li>
+      </ul>
+  </nav>
+  <hr style="background-color:#000; border-width:1px; margin:0;">
+  <hr style="background-color:#000; border-width:1px; margin-top:2px;">
+  <br>
+  
+  <div class="country-tag"></div>
+
+  <h1 class="post-title"> Recess Kickball League (RKL)</h1>
+
+  <div class="date-tag">Oct. 16, 2025</div>
+  
+
+  <div class="container" style="text-align:left; padding:0;">
+
+    <div class="post-feed">
+        <hr style="background-color:#000; border-width:1px; margin:0;">
+
+      <br>
+      <br>
+      
+      <div class="row display-flex justify-content-center align-items-center">
+      <div class="col-sm-8">
+        <div class="featured-img">
+          <img
+          src="../../../../static/images/offline/RKL.jpg"
+          alt="photo">
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    
+        <div class="row post">
+          <!-- LEFT COLUMN: country + date -->
+          <div class="col">
+            <div style="text-align:start; ">
+                <div class="post-body"><p>At the heart of the pandemic, five friends organized a kickball game in Brooklyn in an effort to find a safe and fun way to connect with others during the times of social distancing and uncertainty.</p>
+<p>What started so organically and small-scale has grown to become “Recess Kickball League”, or RKL, a registered sports league with over 250 players on teams in NYC and LA and hundreds of fans on both coasts.</p>
+<p>RKL is more than a sports league: it has created a sense of belonging and community for hundreds of people. With 60% of the players being women and most BIPOC professionals and creatives, RKL has provided a safe space for their community members to connect, thrive, and kick it together. The league has landed multiple brand sponsorships, including the likes of Adidas and Pinterest, and gives back regularly to its local community through cleanups, back-to-school give-backs, and countless community business partnerships.</p>
+<p>Now, we talk to the RKL team about their journey and what comes next.</p>
+<p><strong>Q &amp; A with Glasses Global, the founding team members of RKL</strong></p>
+<p><strong>Q: From your first game to where the league is today, how has the community grown and evolved? Were there any turning points or milestones that stand out?</strong></p>
+<p>The pandemic was extremely tough on folks. It was a sudden and difficult transition; one moment, life in New York was vibrant and bustling, with people constantly on the move, and the next, everyone was isolated and confined for months.</p>
+<p>In June 2020, a group of five friends, who make up Glasses Global, organized a kickball game to provide a safe way for people to connect and have fun together. By the end of that summer, these casual gatherings had grown from small meetups to games that attracted 40 to 50 players.</p>
+<p>Today, Recess Kickball League has grown into a bicoastal recreational kickball league that focuses on giving BIPOC professionals a safe place to play sports and build community. What started as a monthly meetup became a registered sports league, sponsored by adidas, with 250+ players, 16 teams, 70+ volunteer staffers, and hundreds of fans across NYC and LA.</p>
+<p>Our annual Juneteenth and Holiday Classic kickoffs are our biggest tentpole moments, and they set the tone for the season in LA and BK. We are so happy that we have been able to maintain this tradition for five years now, and it’s been a vibrant kickoff to summer in Brooklyn and Winter in LA—and this year’s events were our best yet.</p>
+<p>This year’s Juneteenth Classic, for example, drew over 600 attendees in Brooklyn, hosted a marketplace of minority-owned businesses, and even welcomed a surprise visit from NYC mayoral candidate Zohran Mamdani!</p>
+<p>On the field, all 10 teams delivered their most competitive play to date, while behind the scenes, our volunteers made the day seamless—umpiring games, setting up vendor stations, serving cocktails, capturing content, and handling every last-minute need. The collective effort from all our stakeholders has cemented the Juneteenth Classic as a cornerstone event for RKL and a cultural staple in NYC’s Juneteenth celebrations.</p>
+<p><strong>Q: Adidas is sponsoring your upcoming National All-Star Festival in Atlanta (October 31- November 2, 2025). How do partnerships influence your league, and what do you look for in a brand partner?</strong></p>
+<p>The partnerships and sponsorships we’ve sought out have been a natural extension of our commitment to community. In the beginning, we would seek partnerships with local community businesses. As we started to scale, organically, we’d establish relationships with potential sponsors through our extended network: players in the league, friends of friends, professional contacts, etc. We have worked with various brands, like Janelle Monae’s label, Wondaland, Excel Sports, Recess Beverages, and Pinterest, to name a few. We have been fortunate to have passionate members in the league who champion us in their professional settings, which is how we’ve been able to get countless pitch meetings and to work with 740 Project, Tres Generaciones Tequila, and ultimately, Adidas.</p>
+<p>As we continue to scale, we are looking for community-oriented partners to help us optimize the player experience and league operations while also simultaneously introducing them to an influential audience they might not otherwise have considered.</p>
+<p>The natural next step is expanding beyond New York and LA into other cities, and growth at that scale will require the right brand partner. Whether it’s local businesses looking to vend at our games, major corporations providing us with products or dollars, we appreciate every contribution, big or small.</p>
+<p><strong>Q: What makes you different from other sports leagues? And…Why Kickball?</strong></p>
+<p>What sets RKL apart is that it was intentionally built to mirror the inclusivity and diversity of the city we call home. With over 200 players and staff, 60% of whom are women, and a strong representation of BIPOC creatives, our league is a true reflection of New York and LA’s cultural fabric. We chose kickball because it’s universal and nostalgic; it levels the playing field and brings people together, just like it did in the schoolyard.</p>
+<p>We’re not looking for the best players, we just want people to be their best version of themselves.</p>
+<p>RKL is more than a league; it’s an ecosystem. Many recreational leagues focus solely on play; we create opportunities for members to develop leadership skills, prioritize wellness, and build meaningful relationships that extend far beyond the field.</p>
+<p>With nearly all our members being transplants and native New Yorkers and Angelenos, finding belonging in a city as vast as NYC and LA can be difficult. RKL has become a vessel for our members to feel grounded, supported, and part of something larger. The bonds built on the field have translated into our members celebrating special occasions, sharing career opportunities, and finding family with one another.</p>
+<p><strong>Q: What are RKL’s plans for the future, or some things you are excited about?</strong></p>
+<p>The sky is the limit for RKL! With Adidas, we are testing the RKL model in Atlanta with an All-Star Weekend festival, where we merge the East and West Coast leagues in one city and invite local communities to join the fun.</p>
+<p>Looking ahead, we aim to bring the RKL experience to national and global stages—integrating into cultural moments and collaborating with brands that share our vision. There are so many ways for us to expand the RKL ecosystem:</p>
+<p>Become a registered league under a major fitness brand, similar to Adidas Futbol Society</p>
+<p>Have our games streamed on sports/broadcast networks or platforms like Twitch or ESPN</p>
+<p>Host activations at major events like World Cup 2026, 2028 LA Olympics, MLS games, and festivals like CultureCon and Coachella.</p>
+<p>A product-centric collaboration with leading fitness and lifestyle brands</p>
+<p>An indie/documentary feature capturing the RKL story</p>
+<p>And even a brick and mortar that our community can call home.</p>
+<p>Ultimately, we want to build thriving community spaces that bring together sport, joy, and connection, and we don’t think that only exists in NY or LA. Because we believe it is needed now, more than ever. A space where we can all become our best selves.</p></div>
+        </div>
+    </div>
+  </div>
+  <footer>
+    <hr style="background-color:#000; border-width:1px; margin: 40px 0 40px 0">
+
+    <a href="/anthiportfolio/">ANTHI LIKITSAKOS</a>
+    <div>2025</div>
+  </footer>
+</div>
+
+
+      </div>
+  
+    </body>
+  
+  <!-- BOOTSTRAP JS (match to your CSS version) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+       
+  
