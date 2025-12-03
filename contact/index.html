@@ -35,10 +35,11 @@ html, body {
 }
 
   .navbar {
+    justify-content: space-between;
     min-height: 50px;
     max-height: 500px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     gap: 30px;
     background-color: white;
 }
@@ -68,7 +69,8 @@ html, body {
   box-shadow: none;
 }
 .toggler-icon {
-  display: block;
+  position: relative;
+  right: -12px;
   width: 25px;
   height: .5px;
   background-color: black;
@@ -76,6 +78,8 @@ html, body {
   transition: all 0.3s ease;
 }
 .mobile-close {
+  position: relative;
+  right: -12px;
   height: 0px;
   background: none;
   border: none;
@@ -85,6 +89,7 @@ html, body {
 
 .mobile-nav {
   position: relative;
+  right: -12px;
   z-index: 1050;
 }
 
@@ -128,8 +133,8 @@ body.nav-open {
 
 .mobile-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 12px;
+  right: 12px;
   width: 36px;
   height: 36px;
   background: none;
@@ -259,7 +264,7 @@ html, body {
   line-height: 0.8;
   padding: 0;
   padding-left: 40px;
-  margin-left: 12px;
+  margin-left: 10px;
 
   display: flex;
   align-items: flex-end;
@@ -279,7 +284,7 @@ html, body {
 @media (max-width: 500px) {
   .name-text {
     font-size: 80px;
-    margin-left: 12px;
+    margin-left: 10px;
     max-height: 160px;
   }
 }

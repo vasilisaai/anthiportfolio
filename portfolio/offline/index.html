@@ -35,10 +35,11 @@ html, body {
 }
 
   .navbar {
+    justify-content: space-between;
     min-height: 50px;
     max-height: 500px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     gap: 30px;
     background-color: white;
 }
@@ -68,7 +69,8 @@ html, body {
   box-shadow: none;
 }
 .toggler-icon {
-  display: block;
+  position: relative;
+  right: -12px;
   width: 25px;
   height: .5px;
   background-color: black;
@@ -76,6 +78,8 @@ html, body {
   transition: all 0.3s ease;
 }
 .mobile-close {
+  position: relative;
+  right: -12px;
   height: 0px;
   background: none;
   border: none;
@@ -85,6 +89,7 @@ html, body {
 
 .mobile-nav {
   position: relative;
+  right: -12px;
   z-index: 1050;
 }
 
@@ -128,8 +133,8 @@ body.nav-open {
 
 .mobile-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 12px;
+  right: 12px;
   width: 36px;
   height: 36px;
   background: none;
@@ -381,7 +386,7 @@ body.nav-open {
           <!-- LEFT COLUMN: country + date -->
 
           <!-- RIGHT COLUMN: title + preview -->
-          <div class="col-md-9" id="underline_hover">
+          <div class="col-8 col-md-9" id="underline_hover">
             <div class="date-tag">Oct. 23, 2025</div>
 
             <div class="post-title">
@@ -393,7 +398,7 @@ body.nav-open {
                 Three years ago, Elle Wilson had an idea for a party in her 700-square-foot apartment in NYC. The party had two criteria for its guest list: 1. The guests all had to be single. 2. Each guest was re...
               </div>
           </div>
-          <div class="col-md-3 px-0">
+          <div class="col-4 col-md-3 px-0">
             <div class="thumbnail">
               <img
               src="../../static/images/offline/met-through-friends.jpg"
@@ -409,7 +414,7 @@ body.nav-open {
           <!-- LEFT COLUMN: country + date -->
 
           <!-- RIGHT COLUMN: title + preview -->
-          <div class="col-md-9" id="underline_hover">
+          <div class="col-8 col-md-9" id="underline_hover">
             <div class="date-tag">Nov. 13, 2025</div>
 
             <div class="post-title">
@@ -421,7 +426,7 @@ body.nav-open {
                 In our newsletters, we’ve often highlighted communities in bigger cities. This week, we talked with Third Place in St. Augustine, Florida, about their community in their small but vibrant city. Thi...
               </div>
           </div>
-          <div class="col-md-3 px-0">
+          <div class="col-4 col-md-3 px-0">
             <div class="thumbnail">
               <img
               src="../../static/images/offline/third-place.jpg"
@@ -437,7 +442,7 @@ body.nav-open {
           <!-- LEFT COLUMN: country + date -->
 
           <!-- RIGHT COLUMN: title + preview -->
-          <div class="col-md-9" id="underline_hover">
+          <div class="col-8 col-md-9" id="underline_hover">
             <div class="date-tag">Oct. 16, 2025</div>
 
             <div class="post-title">
@@ -449,7 +454,7 @@ body.nav-open {
                 At the heart of the pandemic, five friends organized a kickball game in Brooklyn in an effort to find a safe and fun way to connect with others during the times of social distancing and uncertainty...
               </div>
           </div>
-          <div class="col-md-3 px-0">
+          <div class="col-4 col-md-3 px-0">
             <div class="thumbnail">
               <img
               src="../../static/images/offline/RKL.jpg"
@@ -465,7 +470,7 @@ body.nav-open {
           <!-- LEFT COLUMN: country + date -->
 
           <!-- RIGHT COLUMN: title + preview -->
-          <div class="col-md-9" id="underline_hover">
+          <div class="col-8 col-md-9" id="underline_hover">
             <div class="date-tag">Oct. 8, 2025</div>
 
             <div class="post-title">
@@ -477,7 +482,7 @@ body.nav-open {
                 FAR-NEAR is a print series-turned community showing yet another signal of a cultural shift offline. Founded in 2017 by Lulu Yao Gioiello, FAR–NEAR began as a print series dedicated to broadening pe...
               </div>
           </div>
-          <div class="col-md-3 px-0">
+          <div class="col-4 col-md-3 px-0">
             <div class="thumbnail">
               <img
               src="../../static/images/offline/far-near.jpg"
